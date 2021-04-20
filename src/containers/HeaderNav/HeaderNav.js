@@ -1,7 +1,7 @@
 import React from 'react';
 import {Form, Icon, Image, Input, Menu} from 'semantic-ui-react';
 import './HeaderNav.scss';
-import logo from '../../assets/images/logo.jpg';
+// import logo from '../../assets/images/logo.jpg';
 import {Link, withRouter} from 'react-router-dom';
 
 export class HeaderNav extends React.Component {
@@ -17,7 +17,7 @@ export class HeaderNav extends React.Component {
       <Menu borderless className='top-menu' fixed='top'>
         {/* 2 */}
         <Menu.Item header className='logo'>
-          <Link to='/'><Image src={logo} size='tiny'/></Link>
+          <Link to='/'><Image src={`https://youinroll.com/YNRLogo.png`}  size='mini'/></Link>
         </Menu.Item>
         {/* 3 */}
         <Menu.Menu className='nav-container'>
@@ -25,9 +25,9 @@ export class HeaderNav extends React.Component {
             <Form onSubmit={this.onSubmit}>
               {/* 4 */}
               <Form.Field>
-                <Input placeholder='Search'
+                <Input placeholder='Искать'
                        size='small'
-                       action='Go'
+                       action='Поиск'
                        value={this.state.query}
                        onChange={this.onInputChange}
                 />
@@ -40,18 +40,18 @@ export class HeaderNav extends React.Component {
               {/* 6 */}
               <Icon className='header-icon' name='video camera' size='large'/>
             </Menu.Item>
-            <Menu.Item>
-              <Icon className='header-icon' name='grid layout' size='large'/>
-            </Menu.Item>
-            <Menu.Item>
+            
+            {/* <Menu.Item>
               <Icon className='header-icon' name='chat' size='large'/>
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item>
               <Icon className='header-icon' name='alarm' size='large'/>
             </Menu.Item>
-            {/* 7*/}
+            <Menu.Item>
+              <Icon className='header-icon' name='grid layout' size='large'/>
+            </Menu.Item>            
             <Menu.Item name='avatar'>
-              <Image src='https://via.placeholder.com/80x80' avatar/>
+              <Image src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' avatar/>
             </Menu.Item>
           </Menu.Menu>
         </Menu.Menu>
