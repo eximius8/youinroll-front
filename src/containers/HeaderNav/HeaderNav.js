@@ -1,17 +1,57 @@
-import React from 'react';
-import {Form, Icon, Image, Input, Menu} from 'semantic-ui-react';
+import React, {useState} from 'react';
+import {Form, Icon, Image, Input, Menu, Button, Header, Modal} from 'semantic-ui-react';
 import './HeaderNav.scss';
 // import logo from '../../assets/images/logo.jpg';
 import {Link, withRouter} from 'react-router-dom';
 
-export class HeaderNav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      query: '',
-    };
-  }
-  render() {
+
+
+function UserModal({ctabut}) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <Modal
+      basic
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      size='small'
+      trigger={ctabut}
+    >
+      <Header icon>        
+        Профиль пользователя
+      </Header>
+      <Modal.Content>
+        <p>
+          Профиль пользователя Никита Вадимович
+        </p>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button basic color='red' inverted onClick={() => setOpen(false)}>
+          <Icon name='remove' /> Закрыть
+        </Button>
+        
+      </Modal.Actions>
+    </Modal>
+  )
+}
+
+function HeaderNav({props}) {
+  
+  const [searchquery, setQuery ] = useState("");
+
+
+  const  onInputChange = (event) => {
+    setQuery(event.target.value);    
+  };
+
+  const onSubmit = () => {
+    const escapedSearchQuery = encodeURI(searchquery);
+    props.history.push(`/results?search_query=${escapedSearchQuery}`);
+  };
+
+  
+  
     return (
       // 1
       <Menu borderless className='top-menu' fixed='top'>
@@ -22,14 +62,14 @@ export class HeaderNav extends React.Component {
         {/* 3 */}
         <Menu.Menu className='nav-container'>
           <Menu.Item className='search-input'>
-            <Form onSubmit={this.onSubmit}>
+            <Form onSubmit={onSubmit}>
               {/* 4 */}
               <Form.Field>
                 <Input placeholder='Искать'
                        size='small'
                        action='Поиск'
-                       value={this.state.query}
-                       onChange={this.onInputChange}
+                       value={searchquery}
+                       onChange={onInputChange}
                 />
               </Form.Field>
             </Form>
@@ -51,23 +91,20 @@ export class HeaderNav extends React.Component {
               <Icon className='header-icon' name='grid layout' size='large'/>
             </Menu.Item>            
             <Menu.Item name='avatar'>
-              <Image src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' avatar/>
+              <UserModal 
+              ctabut={
+                <Button className='white'>
+                  <Image src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' avatar/>
+                </Button>}
+              />              
             </Menu.Item>
           </Menu.Menu>
         </Menu.Menu>
+       
       </Menu>
     );
-  }
-  onInputChange = (event) => {
-    this.setState({
-      query: event.target.value,
-    });
-  };
-
-  onSubmit = () => {
-    const escapedSearchQuery = encodeURI(this.state.query);
-    this.props.history.push(`/results?search_query=${escapedSearchQuery}`);
-  };
+  
+  
 }
 
 export default withRouter(HeaderNav);
