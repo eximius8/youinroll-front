@@ -85,17 +85,16 @@ function HeaderNav({props}) {
               <Icon className='header-icon' name='chat' size='large'/>
             </Menu.Item> */}
             <Menu.Item>
-              <Icon className='header-icon' name='alarm' size='large'/>
+              <Icon className='header-icon' name='bell outline' size='large'/>
             </Menu.Item>
             <Menu.Item>
-              <Icon className='header-icon' name='grid layout' size='large'/>
+              <Icon className='header-icon' name='block layout' size='large'/>
             </Menu.Item>            
             <Menu.Item name='avatar'>
               <UserModal 
               ctabut={
-                <Button className='white'>
-                  <Image src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' avatar/>
-                </Button>}
+                <Image src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' avatar/>
+               }
               />              
             </Menu.Item>
           </Menu.Menu>

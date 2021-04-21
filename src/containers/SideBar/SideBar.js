@@ -10,11 +10,26 @@ export class SideBar extends React.Component {
   render() {
     return (
       <Menu borderless vertical stackable fixed='left' className='side-nav'>
-        <SideBarItem path='/' label='Home' icon='home'/>
-        <SideBarItem path='/feed/trending' label='Trending' icon='fire'/>
-        <SideBarItem label='Followers' icon='spy'/>
+        <SideBarItem path='/' label='Мой канал' icon='home'/>
+        <SideBarItem label='Чат' icon='comments outline'/>
         <Divider/>
-        <SideBarHeader title='Library'/>
+        <SideBarItem path='/feed/trending' label='В тренде' icon='fire'/>
+        <SideBarItem path='/categories' label='Категории' icon='play circle outline'/>
+        <SideBarItem path='/subscription' label='Каналы' icon='list'/>       
+        
+        <Divider/>
+        <SideBarHeader title='Мои курсы'/>
+        <SideBarItem label='Как стать звездой' icon='film'/>
+        <Divider/>
+
+        <Subscriptions/>
+        
+        <SideBarItem path='/settings' label='Настройки' icon='setting'/>
+        <SideBarItem label='Помощь' icon='help circle'/>
+        <SideBarItem label='Обратная связь' icon='comment alternate outline'/>
+        
+        
+       {/*  <SideBarHeader title='Library'/>
         <SideBarItem label='History' icon='history'/>
         <SideBarItem label='Watch later' icon='clock'/>
         <SideBarItem label='Liked videos' icon='thumbs up'/>
@@ -27,7 +42,7 @@ export class SideBar extends React.Component {
         <SideBarItem label='Help' icon='help circle'/>
         <SideBarItem label='Send feedback' icon='comment'/>
         <Divider/>
-        <SideBarFooter/>
+        <SideBarFooter/> */}
       </Menu>
     );
   }
