@@ -7,6 +7,12 @@
     }
   }
 
+  div {
+    i.icon {      
+      color: #888888;
+    }
+  }
+
   &.highlight-item {
     span {
       font-weight: 600;
@@ -32,8 +38,3 @@
   justify-content: center;
 }
 
-.sidebar-item {
-  display: inline-block;
-  align-items: center;
-  
-}

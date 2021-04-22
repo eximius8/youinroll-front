@@ -1,7 +1,8 @@
 import React from 'react';
-import {Icon, Menu} from "semantic-ui-react";
+import {Container, Icon, Menu} from "semantic-ui-react";
 import './SideBarItem.scss';
-import {Link, withRouter} from 'react-router-dom';
+import {Link, withRouter, useLocation} from 'react-router-dom';
+
 
 export class SideBarItem extends React.Component {
   render() {
@@ -29,6 +30,42 @@ export class SideBarItem extends React.Component {
     }
     return pathname.includes(this.props.path);
   }
+}
+
+export function SideBarItemSmall({label, path, icon}){ 
+
+  let location = useLocation();
+
+   function shouldBeHighlighted() {
+    const pathname = location.pathname;
+    if (path === '/') {
+      return pathname === path;
+    }
+    return pathname.includes(path);
+  } 
+
+  const highlight = shouldBeHighlighted() ? 'highlight-item' : null;
+ 
+
+  return(
+    <Link to={{pathname: path}}>
+        <Menu.Item className={['sidebar-item', highlight].join(' ')}>
+          <Container 
+            fluid 
+            className='sidebar-items-shrinked'
+            textAlign='center'
+          >            
+              <div>
+                <Icon size='big' name={icon}  />
+              </div>
+              <div>
+                {label}
+              </div> 
+          </Container>
+        </Menu.Item>
+      </Link>
+  )
+
 }
 
 export default withRouter(SideBarItem);

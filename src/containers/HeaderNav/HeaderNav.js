@@ -36,12 +36,10 @@ function UserModal({ctabut}) {
   )
 }
 
-function HeaderNav({props}) {
+function HeaderNav({props, isMenuSmall, setIsMenuSmall}) {
   
   const [searchquery, setQuery ] = useState("");
-  const [isMenuSmall, setIsMenuSmall] = useState(false);
-
-
+  
   const  onInputChange = (event) => {
     setQuery(event.target.value);    
   };
@@ -59,6 +57,7 @@ function HeaderNav({props}) {
         {/* 2 */}
         <Menu.Item header >
           <Button 
+            onClick={() => setIsMenuSmall(!isMenuSmall)}
             basic 
             className="button" 
           >          
