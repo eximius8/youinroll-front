@@ -39,6 +39,7 @@ function UserModal({ctabut}) {
 function HeaderNav({props}) {
   
   const [searchquery, setQuery ] = useState("");
+  const [isMenuSmall, setIsMenuSmall] = useState(false);
 
 
   const  onInputChange = (event) => {
@@ -56,8 +57,19 @@ function HeaderNav({props}) {
       // 1
       <Menu borderless className='top-menu' fixed='top'>
         {/* 2 */}
+        <Menu.Item header >
+          <Button 
+            basic 
+            className="button" 
+          >          
+            <Icon name="bars" size='big' className='burger-top' />
+          </Button>   
+        </Menu.Item>
+         {/* 2' */}
         <Menu.Item header className='logo'>
-          <Link to='/'><Image src={`https://youinroll.com/YNRLogo.png`}  size='mini'/></Link>
+          <Link to='/'>          
+            <Image src={`https://youinroll.com/YNRLogo.png`}  size='mini'/>
+          </Link>
         </Menu.Item>
         {/* 3 */}
         <Menu.Menu className='nav-container'>

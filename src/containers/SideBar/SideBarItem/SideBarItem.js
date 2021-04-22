@@ -11,9 +11,11 @@ export class SideBarItem extends React.Component {
     return (
       <Link to={{pathname: this.props.path}}>
         <Menu.Item className={['sidebar-item', highlight].join(' ')}>
-          <div className='sidebar-item-alignment-container'>
-            <span><Icon size='large' name={this.props.icon}/> </span>
-            <span>{this.props.label}</span>
+          <div className='sidebar-item-alignment-container'>            
+              <span>
+                <Icon size='large' name={this.props.icon}/>
+              </span>
+              <span>{this.props.label}</span> 
           </div>
         </Menu.Item>
       </Link>

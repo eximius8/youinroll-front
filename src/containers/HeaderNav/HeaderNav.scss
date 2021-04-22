@@ -4,6 +4,8 @@
   we use this rule to tweak the SCSS
 */
 .ui.menu.top-menu {
+  background: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(40px);
   border: none;
   .logo {
     width: $sidebar-left-width;
@@ -25,4 +27,13 @@
   .header-icon {
     color: #a0a0a0;
   }
+}
+
+.burger-top{
+  color: #a970ff;
+}
+
+.button:hover {
+  color: transparent;
+  background: transparent;
 }

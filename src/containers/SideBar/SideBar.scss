@@ -15,8 +15,12 @@ $sidebar-hover-color: #ebebeb;
     background: #ebebeb;
     cursor: pointer;
   }
-}
+} 
 
 .side-nav.ui.vertical.menu {
-  width: $sidebar-left-width;
+  width:  $sidebar-left-width;
+}
+
+.side-shrinked-nav.ui.vertical.menu {
+  width:  $sidebar-left-shrinked-width;
 }

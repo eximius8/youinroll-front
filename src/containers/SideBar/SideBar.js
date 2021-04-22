@@ -4,10 +4,12 @@ import {Menu, Divider} from 'semantic-ui-react';
 import './SideBar.scss';
 import {SideBarHeader} from './SideBarHeader/SideBarHeader';
 import {Subscriptions} from './Subscriptions/Subscriptions';
-import {SideBarFooter} from './SideBarFooter/SideBarFooter';
+//import {SideBarFooter} from './SideBarFooter/SideBarFooter';
 
-export class SideBar extends React.Component {
-  render() {
+export function SideBar() {
+
+
+  
     return (
       <Menu borderless vertical stackable fixed='left' className='side-nav'>
         <SideBarItem path='/' label='Мой канал' icon='home'/>
@@ -26,10 +28,13 @@ export class SideBar extends React.Component {
         
         <SideBarItem path='/settings' label='Настройки' icon='setting'/>
         <SideBarItem label='Помощь' icon='help circle'/>
-        <SideBarItem label='Обратная связь' icon='comment alternate outline'/>
-        
-        
-       {/*  <SideBarHeader title='Library'/>
+        <SideBarItem label='Обратная связь' icon='comment alternate outline'/>     
+      </Menu>
+    );  
+}
+
+
+  {/*  <SideBarHeader title='Library'/>
         <SideBarItem label='History' icon='history'/>
         <SideBarItem label='Watch later' icon='clock'/>
         <SideBarItem label='Liked videos' icon='thumbs up'/>
@@ -43,7 +48,3 @@ export class SideBar extends React.Component {
         <SideBarItem label='Send feedback' icon='comment'/>
         <Divider/>
         <SideBarFooter/> */}
-      </Menu>
-    );
-  }
-}

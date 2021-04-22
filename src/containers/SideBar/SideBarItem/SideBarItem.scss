@@ -13,7 +13,7 @@
     }
 
     i.icon {
-      color: #ff0002;
+      color: #a970ff;
     }
   }
 }
@@ -22,4 +22,18 @@
 .sidebar-item-alignment-container {
   display: flex;
   align-items: center;
+}
+
+.sidebar-items-shrinked {
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-item {
+  display: inline-block;
+  align-items: center;
+  
 }
