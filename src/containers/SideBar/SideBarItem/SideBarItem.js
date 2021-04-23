@@ -56,7 +56,7 @@ export function SideBarItemSmall({label, path, icon}){
             textAlign='center'
           >            
               <div>
-                <Icon size='big' name={icon}  />
+                <Icon size='large' name={icon}  />
               </div>
               <div>
                 {label}

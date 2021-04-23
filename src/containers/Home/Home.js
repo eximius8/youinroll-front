@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import * as videoActions from "../../store/actions/video";
 import './Home.scss';
-import {SideBar} from '../SideBar/SideBar';
+//import {SideBar} from '../SideBar/SideBar';
 //import HomeContent from './HomeContent/HomeContent';
 import {bindActionCreators} from 'redux';
 import {getYoutubeLibraryLoaded} from '../../store/reducers/api';
@@ -19,7 +19,9 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <SideBar/>
+        <h1>Просмотр sdafdsjfg sahdfgsdagfdasghf dgshfsdgafjgjdasgfdsa dshgfdasgs</h1>
+
+     {/*  <SideBar/> */}
       {/*   <HomeContent
           bottomReachedCallback={this.bottomReachedCallback}
           showLoader={this.shouldShowLoader()}/> */}

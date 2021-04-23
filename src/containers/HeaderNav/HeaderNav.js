@@ -50,7 +50,7 @@ function HeaderNav({props, isMenuSmall, setIsMenuSmall}) {
   };
 
   
-  
+   
     return (
       // 1
       <Menu borderless className='top-menu' fixed='top'>
@@ -59,7 +59,7 @@ function HeaderNav({props, isMenuSmall, setIsMenuSmall}) {
           <Button 
             onClick={() => setIsMenuSmall(!isMenuSmall)}
             basic 
-            className="button" 
+            className="noHover" 
           >          
             <Icon name="bars" size='big' className='burger-top' />
           </Button>   
