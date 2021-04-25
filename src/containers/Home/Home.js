@@ -21,7 +21,7 @@ class Home extends React.Component {
     return (
       <div className="home">
 
-        <h1>Просмотр sdafdsjfg sahdfgsdagfdasghf dgshfsdgafjgjdasgfdsa dshgfdasgs</h1>
+        <h1>Мой канал</h1>
 
      {/*  <SideBar/> */}
       {/*   <HomeContent

@@ -3,11 +3,11 @@ import './AppLayout.scss';
 import HeaderNav from '../../containers/HeaderNav/HeaderNav';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
-export const MenuContext = React.createContext(false);
+export const MenuContext = React.createContext(true);
 
 export function AppLayout(props) {
   
-  const [isMenuSmall, setIsMenuSmall] = useState(false);  
+  const [isMenuSmall, setIsMenuSmall] = useState(true);  
 
   return (
     <ScrollToTop>

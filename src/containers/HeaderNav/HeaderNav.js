@@ -56,13 +56,12 @@ function HeaderNav({props, isMenuSmall, setIsMenuSmall}) {
       <Menu borderless className='top-menu' fixed='top'>
         {/* 2 */}
         <Menu.Item header >
-          <Button 
-            onClick={() => setIsMenuSmall(!isMenuSmall)}
-            basic 
+          <button 
+            onClick={() => setIsMenuSmall(!isMenuSmall)}            
             className="noHover" 
           >          
             <Icon name="bars" size='big' className='burger-top' />
-          </Button>   
+          </button>   
         </Menu.Item>
          {/* 2' */}
         <Menu.Item header className='logo'>

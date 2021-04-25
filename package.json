@@ -1,5 +1,5 @@
 {
-  "name": "youtube-react",
+  "name": "youtube-youinroll",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,6 +20,7 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.2.0"
   },
+  "homepage": "https://youinroll.com/react1",
   "scripts": {
     "dev": "source .env.local && npm start",
     "start": "react-scripts start",
