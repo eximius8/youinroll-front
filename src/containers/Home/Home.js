@@ -7,6 +7,7 @@ import './Home.scss';
 import {bindActionCreators} from 'redux';
 import {getYoutubeLibraryLoaded} from '../../store/reducers/api';
 import {getVideoCategoryIds, videoCategoriesLoaded, videosByCategoryLoaded} from '../../store/reducers/videos';
+import { Container } from 'semantic-ui-react';
 
 class Home extends React.Component {
   constructor(props) {
@@ -18,14 +19,15 @@ class Home extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="home">
+
         <h1>Просмотр sdafdsjfg sahdfgsdagfdasghf dgshfsdgafjgjdasgfdsa dshgfdasgs</h1>
 
      {/*  <SideBar/> */}
       {/*   <HomeContent
           bottomReachedCallback={this.bottomReachedCallback}
           showLoader={this.shouldShowLoader()}/> */}
-      </React.Fragment>
+      </div>
     );
   }
 
