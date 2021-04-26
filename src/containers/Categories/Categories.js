@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {  Container, Grid, Image, Card, Icon, } from 'semantic-ui-react';
+import {  Container, Grid, Image } from 'semantic-ui-react';
 import './Categories.scss';
 // import {VideoList} from '../../components/VideoList/VideoList'; <VideoList  />
 

@@ -36,7 +36,9 @@ function UserModal({ctabut}) {
   )
 }
 
-function HeaderNav({props, isMenuSmall, setIsMenuSmall}) {
+function HeaderNav({props}) { 
+
+  //isMenuSmall, setIsMenuSmall
   
   const [searchquery, setQuery ] = useState("");
   
@@ -55,14 +57,14 @@ function HeaderNav({props, isMenuSmall, setIsMenuSmall}) {
       // 1
       <Menu borderless className='top-menu' fixed='top'>
         {/* 2 */}
-        <Menu.Item header >
+        {/* <Menu.Item header >
           <button 
             onClick={() => setIsMenuSmall(!isMenuSmall)}            
             className="noHover" 
           >          
             <Icon name="bars" size='big' className='burger-top' />
           </button>   
-        </Menu.Item>
+        </Menu.Item> */}
          {/* 2' */}
         <Menu.Item header className='logo'>
           <Link to='/'>          

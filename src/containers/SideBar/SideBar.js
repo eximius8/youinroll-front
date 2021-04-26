@@ -1,27 +1,43 @@
-import React, {useContext} from 'react';
+import React, { useState} from 'react';
 import SideBarItem, {SideBarItemSmall} from './SideBarItem/SideBarItem';
-import {Menu, Divider} from 'semantic-ui-react';
+import {Menu, Divider, Icon, Button} from 'semantic-ui-react';
 import './SideBar.scss';
 import {SideBarHeader} from './SideBarHeader/SideBarHeader';
 import {Subscriptions} from './Subscriptions/Subscriptions';
 //import {SideBarFooter} from './SideBarFooter/SideBarFooter';
 
-import {MenuContext} from "../../components/AppLayout/AppLayout";
+//import {MenuContext} from "../../components/AppLayout/AppLayout";
 
 export function SideBar() {
 
-  const isOpen = useContext(MenuContext);
+  //const isOpen = useContext(MenuContext);
+
+  const [isOpen, setIsOpen] = useState(true);
   
   
   if (isOpen){
     return (      
         <Menu borderless vertical stackable fixed='left' className='side-nav'>
+          <SideBarHeader 
+            title="Меню" 
+            act={
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="floatright"
+              >
+                <svg width="30%" height="50%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScIconSVG-sc-1bgeryd-1 cMQeyU">
+                  <g><path fill="#888888" stroke="#888888" d="M16 16V4h2v12h-2zM6 9l2.501-2.5-1.5-1.5-5 5 5 5 1.5-1.5-2.5-2.5h8V9H6z"></path></g>
+                </svg>
+                {/* <Icon className="angle double left"> </Icon>  */}
+              </button>
+              }
+          />
           <SideBarItem path='/' label='Мой канал' icon='home'/>
           <SideBarItem label='Чат' icon='comments outline'/>
           <Divider/>
           <SideBarItem path='/feed/trending' label='В тренде' icon='fire'/>
-          <SideBarItem path='/categories' label='Категории' icon='play circle outline'/>
-          <SideBarItem path='/subscription' label='Каналы' icon='list'/>       
+          <SideBarItem path='/categories' label='Категории' icon='compass'/>
+          <SideBarItem path='/сhannels' label='Каналы' icon='list'/>       
           
           <Divider/>
           <SideBarHeader title='Мои курсы'/>
@@ -29,30 +45,39 @@ export function SideBar() {
           <Divider/>
 
           <Subscriptions/>
-          
+          {/* 
           <SideBarItem path='/settings' label='Настройки' icon='setting'/>
           <SideBarItem label='Помощь' icon='help circle'/>
-          <SideBarItem label='Обратная связь' icon='comment alternate outline'/>     
+          <SideBarItem label='Обратная связь' icon='comment alternate outline'/>  */}    
         </Menu>      
     )}
   
     return(
       <Menu borderless vertical stackable fixed='left' className='side-shrinked-nav'>
+        <button 
+          className="floatcenter"
+          onClick={() => setIsOpen(true)}
+        > 
+          <svg width="40%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScIconSVG-sc-1bgeryd-1 cMQeyU">
+            <g><path fill="#888888" stroke="#888888" d="M4 16V4H2v12h2zM13 15l-1.5-1.5L14 11H6V9h8l-2.5-2.5L13 5l5 5-5 5z"></path></g>
+          </svg>        
+         {/*  <Icon className="angle double right"> </Icon>  */}
+        </button>
         <SideBarItemSmall path='/' label='Мой канал' icon='home' />
         
         <SideBarItemSmall label='Чат' icon='comments outline'/>
         <Divider/>
-        <SideBarItemSmall path='/categories' label='Категории' icon='play circle outline'/>
-        <SideBarItemSmall path='/subscription' label='Каналы' icon='list'/>
-        <Divider/>
-        <SideBarItemSmall path='/settings' label='Настройки' icon='setting'/> 
+        <SideBarItemSmall path='/categories' label='Категории' icon='compass'/>
+        <SideBarItemSmall path='/сhannels' label='Каналы' icon='list'/>
+       {/*  <Divider/>
+        <SideBarItemSmall path='/settings' label='Настройки' icon='setting'/>  */}
           
       </Menu>  
     );
 }
 
 
-  {/*  <SideBarHeader title='Library'/>
+ /*  <SideBarHeader title='Library'/>
         <SideBarItem label='History' icon='history'/>
         <SideBarItem label='Watch later' icon='clock'/>
         <SideBarItem label='Liked videos' icon='thumbs up'/>
@@ -65,4 +90,4 @@ export function SideBar() {
         <SideBarItem label='Help' icon='help circle'/>
         <SideBarItem label='Send feedback' icon='comment'/>
         <Divider/>
-        <SideBarFooter/> */}
+        <SideBarFooter/> */

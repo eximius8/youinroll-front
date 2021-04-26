@@ -9,6 +9,7 @@ import {youtubeLibraryLoaded} from './store/actions/api';
 import Trending from './containers/Trending/Trending';
 import Search from './containers/Search/Search';
 import Categories from './containers/Categories/Categories';
+import Channels from './containers/Channels/Channels';
 
 import {SideBar} from './containers/SideBar/SideBar';
 
@@ -24,7 +25,8 @@ class App extends Component {
           <Route path="/feed/trending" component={Trending}/>
           <Route path="/results" render={() => <Search key={this.props.location.key}/>}/>
           <Route path="/watch" render={() => <Watch key={this.props.location.key}/>}/>
-          <Route path="/categories" component={Categories}/>          
+          <Route path="/categories" component={Categories}/>
+          <Route path="/сhannels" component={Channels}/>
           <Route path="/" component={Home}/>
 
         </Switch>

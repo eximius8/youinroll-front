@@ -7,7 +7,7 @@ import './Home.scss';
 import {bindActionCreators} from 'redux';
 import {getYoutubeLibraryLoaded} from '../../store/reducers/api';
 import {getVideoCategoryIds, videoCategoriesLoaded, videosByCategoryLoaded} from '../../store/reducers/videos';
-import { Container } from 'semantic-ui-react';
+
 
 class Home extends React.Component {
   constructor(props) {

@@ -26,3 +26,26 @@ $sidebar-hover-color: #ebebeb;
 .side-shrinked-nav.ui.vertical.menu {
   width:  $sidebar-left-shrinked-width;
 }
+
+
+.floatright {
+  //float: right;
+ 
+  text-align: right;
+  color: #888888;
+  border: none;
+  background-color: inherit;
+}
+
+.floatcenter {
+  margin: 0 auto;  
+  width: 100%;
+  border: none;
+  color: #888888;
+  background-color: inherit;
+}
+
+.floatcenter:hover, .floatright:hover {
+  background: $sidebar-hover-color;
+  /*color: white;*/
+}

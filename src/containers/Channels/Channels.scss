@@ -1,99 +1,42 @@
 @import '../../styles/shared.scss';
 
-.categories {
-  padding-left: $sidebar-left-width+1rem;
-  padding-top: 3px;
- 
-  width: 100%;
-  display: inline-block;  
+.arrowbutton {
+  background-color: inherit;
+  border: none;
+  color: rgba(22,24,35,0.5);
 }
 
-.groupcard{
-  padding-bottom: 10px;
+.channelcard {
+  border: 1px solid rgba(22,24,35,0.12);  
+  width: 242px;
+  height:280px;
+  padding: 32px 12px;
 }
 
-.groupheading{
-  margin-top: 3px;
-  margin-bottom: 0px;
-  font-size: 14px;
+.channelcard * { 
+  margin: 12px auto 0;
+  text-align: center;
+}
+
+.channelcard h3 { 
+  
   padding-bottom: 0px;
-  font-family: Inter, Roobert, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.groupviewers a{
-  padding: 0px;
-  font-size: 13px;
-  margin: 0px;
-  font-family: Inter, Roobert, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration-color: rgb(83, 83, 95);
-  color: rgb(83, 83, 95);
-}
-
-.grouptags button{
-  background-color: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.7);
-  font-family: Inter, Roobert, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  border: none;
-  border-radius: 5px;
+  margin-bottom: 0px;
+  font-size: 20px;
+  line-height: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "proxima-semibold",PingFangSC,sans-serif;
   font-weight: 600;
-  margin-right: 5%;
 }
 
-
-.category {
-  background-color:#772ce8;
-  width: 100%; 
-  border: none;
-  color: white;
-  padding: 15px 12px;
-  text-align: left;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  font-size: 26px;
-  border-radius: 4px;
-  margin-bottom: 6px;
-}
-
-@media all and (min-width: 476px) {
-  .responsive-video-grid-container {
-    max-width: 240px;
-  }
-}
-
-@media all and (min-width: 700px) {
-  .responsive-video-grid-container {
-    max-width: 472px;
-  }
-}
-
-@media all and (min-width: 900px) {
-  .responsive-video-grid-container {
-    max-width: 667px;
-  }
-}
-
-@media all and (min-width: 1096px) {
-  .responsive-video-grid-container {
-    max-width: 864px;
-  }
-}
-
-@media all and (min-width: 1370px) {
-  .responsive-video-grid-container {
-    max-width: 1096px;
-  }
-}
-
-@media all and (min-width: 1370px) {
-  .responsive-video-grid-container {
-    max-width: 1096px;
-  }
-}
-
-@media all and (min-width: 1560px) {
-  .responsive-video-grid-container {
-    max-width: 1284px;
-  }
+.channelcard h4, .channelcard div {
+  font-size: 15px;
+  margin-top: 0px;
+    line-height: 18px;
+    color: rgba(22,24,35,0.5);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

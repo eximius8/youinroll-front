@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './AppLayout.scss';
 import HeaderNav from '../../containers/HeaderNav/HeaderNav';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
-export const MenuContext = React.createContext(true);
+//export const MenuContext = React.createContext(true);
 
 export function AppLayout(props) {
   
-  const [isMenuSmall, setIsMenuSmall] = useState(true);  
+  //const [isMenuSmall, setIsMenuSmall] = useState(true);  
 
   return (
     <ScrollToTop>
       <div className='app-layout'>
-        <HeaderNav isMenuSmall={isMenuSmall} setIsMenuSmall={setIsMenuSmall} />
-        <MenuContext.Provider value={isMenuSmall}>
+        <HeaderNav />
           {props.children}
-        </MenuContext.Provider>
+        {/* <MenuContext.Provider value={isMenuSmall}>
+          
+        </MenuContext.Provider> */}
       </div>
     </ScrollToTop>
   );
