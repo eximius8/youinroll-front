@@ -42,18 +42,18 @@ export default function Categories () {
     return (
         <Container fluid className="categories">
             <h1>Просмотр</h1>
-            <Grid padded={false} stackable>
-                <Grid.Row>
-                    <Grid.Column tablet={8} computer={4}>                        
+            <Grid columns="twelve">
+                <Grid.Row >
+                    <Grid.Column tablet={6} computer={4}>                        
                         <button className="category" >Курсы</button>                                      
                     </Grid.Column>
-                    <Grid.Column tablet={8} computer={4}>
+                    <Grid.Column tablet={6} computer={4}>
                         <button className="category" >Стримы</button>                      
                     </Grid.Column>
-                    <Grid.Column tablet={8} computer={4}>
+                    <Grid.Column tablet={6} computer={4}>
                         <button className="category">Лекции</button>    
                     </Grid.Column>
-                    <Grid.Column tablet={8} computer={4}>
+                    <Grid.Column tablet={6} computer={4}>
                         <button className="category" >Задания</button>    
                     </Grid.Column>
                 </Grid.Row>

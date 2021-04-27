@@ -8,17 +8,20 @@ export function SideBarHeader(props) {
   return (
     <Menu.Item>
       <Menu.Header className='side-bar-header'>
-        <Grid columns={2} textAlign='right' >
-          <Grid.Row verticalAlign='middle'>
-            <Grid.Column>
-              {heading} 
-            </Grid.Column>
-            <Grid.Column >
-              {act && act}
-            </Grid.Column>            
-            
-          </Grid.Row>        
-        </Grid>       
+        {!heading && act &&
+          <Grid columns={2} textAlign='right' >
+            <Grid.Row verticalAlign='middle'>
+              <Grid.Column>
+                {heading} 
+              </Grid.Column>
+              <Grid.Column >
+                {act}
+              </Grid.Column>            
+              
+            </Grid.Row>        
+          </Grid>
+        }
+        {heading && !act && heading }
       </Menu.Header>
     </Menu.Item>
   );
