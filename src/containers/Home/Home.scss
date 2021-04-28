@@ -10,13 +10,18 @@
   background-color: #fafafa;
 }
 
-
 .channel-info {
   display: flex;
   margin-left: 20px;
   background-color: white;
   justify-content: space-between;  
   padding: 20px;
+}
+
+.tabmenu {
+  margin-left: 20px;
+  display: Inline-block;
+  width: 100%;
 }
 
 .avatarblock{
@@ -37,7 +42,7 @@
 
 .buttonblock{
   display: block;
-  width: 800px;  
+  width: 600px;  
   
 }
 

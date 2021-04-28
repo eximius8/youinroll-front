@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Image, Button, Icon } from 'semantic-ui-react';
+import { Container,  Image, Button } from 'semantic-ui-react';
 //import {connect} from "react-redux";
 //import * as videoActions from "../../store/actions/video";
 import './Home.scss';
@@ -9,7 +9,7 @@ import './Home.scss';
 //import {getYoutubeLibraryLoaded} from '../../store/reducers/api';
 //import {getVideoCategoryIds, videoCategoriesLoaded, videosByCategoryLoaded} from '../../store/reducers/videos';
 
-
+import TabExampleSecondaryPointing from "../../components/ChannelTabs/CHannelTabs";
 
 
 export default function Home(){
@@ -54,8 +54,9 @@ export default function Home(){
             <Button icon='bell' />
             <Button icon='ellipsis vertical' />
           </div>
-          
-            
+        </div>
+        <div className="tabmenu">
+          <TabExampleSecondaryPointing />
 
         </div>
       </Container>
