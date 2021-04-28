@@ -1,67 +1,100 @@
 import React, { useEffect, useState } from 'react';
 import {Subscription} from "./Subscription/Subscription";
-import {Button, Divider, Icon} from "semantic-ui-react";
+import {Button,  Icon, Form} from "semantic-ui-react";
 import {SideBarHeader} from '../SideBarHeader/SideBarHeader';
+import "./Subscription.scss";
 
 //import SideBarItem from '../SideBarItem/SideBarItem';
 import axios from 'axios';
 
+
+const SearchBar = ({setSearchKey}) => {
+
+  return(
+    <div className="subsciptionsearch">
+      <Form >
+        <Form.Field>        
+          <input 
+            placeholder='Быстрый поиск' 
+            onChange={(e) => setSearchKey(e.target.value) }
+          />
+        </Form.Field>    
+      </Form>
+    </div>
+  )
+}
+
 export function Subscriptions() {
 
   const [showAll, setShowAll] = useState(false);
-  const [subscriptions, setSibscriptions] = useState({
-    avatar: "res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130",
-    name: "Никита Вадимович"}
-  );
+  const [subscriptions, setSibscriptions] = useState([]);
+  const [subscrToShow, setSubscrToShow] = useState(null);
+  const [allSubscriptions, setAllSubscriptions] = useState([]);
+  const [searchKey, setSearchKey ] = useState("");
 
-  const [hiddenavtrs, setHiddenavtrs] = useState({
-    avatar: "res.php?src=storage/uploads/46f76053c4c77fc742027ab9d443d8d6-948.png&q=100&w=130&h=130",
-    name: "Михаил"
-  });
+  
 
-/*   useEffect(() => {
-    axios.get(`https://youinroll.com/profile/1?api=v1.0`)
-    .then((res) => {
+   useEffect(() => {    
+    axios.get("https://youinroll.com/profile/1/subscriptions?api=v1.1")
+    .then((res) => {    
+      let subscribers = res.data.response;        
+      subscribers.sort( function(a, b){return b.onAir - a.onAir}  );
+      setAllSubscriptions(subscribers); 
       
-      console.log(typeof res.data);  
-      setSibscriptions(res.data.response);
+      if (subscribers.length <= 5){
+        setSibscriptions(subscribers);        
+      }else{   
+        setSibscriptions(subscribers.slice(0,5));     
+        setSubscrToShow(subscribers.slice(5, subscribers.length));
+      }      
     })
     .catch((err) => console.log(err));
 
-    axios.get(`https://youinroll.com/profile/948?api=v1.0`)
-    .then((res) => { 
-      
-      setHiddenavtrs(res.data.response);
-    })
-    .catch((err) => console.log(err)) 
-  },[]); */
+  },[]); 
 
 
-  const initial = [1,2];
-  const hidden = [3,4];
+
  
     return (
       <React.Fragment>
         <SideBarHeader title='Отслеживаемые каналы'/>
-        {initial.map((chanel) => 
-          <Subscription key={chanel} pictr={subscriptions.avatar} label={subscriptions.name} amountNewVideos={chanel}/>          
-        )}
-        {showAll && hiddenavtrs &&
-          <> 
-            {hidden.map((chanel) => 
-              <Subscription key={chanel} pictr={hiddenavtrs.avatar} label={hiddenavtrs.name} broadcasting/>          
+        {!searchKey &&
+          <>
+            {subscriptions.map((subscription) => 
+              <Subscription key={subscription.id} subscription={subscription}/>          
             )}
           </>
         }
-        <Button 
-          fluid 
-          icon 
-          labelPosition='left'
-          onClick={() => setShowAll(!showAll)}
-        >
-          <Icon name={showAll ? "angle up" : "angle down"} />
-          {showAll ? "Свернуть" : "Показать еще"}
-        </Button>
+         {showAll && !searchKey &&
+          <> 
+            {subscrToShow.map((subscription) => 
+              <Subscription key={subscription.id} subscription={subscription}/> 
+            )}
+          </>
+        }
+        {subscrToShow && !searchKey &&
+          <Button 
+            fluid 
+            icon 
+            labelPosition='left'
+            onClick={() => setShowAll(!showAll)}
+          >
+            <Icon name={showAll ? "angle up" : "angle down"} />
+            {showAll ? "Свернуть" : "Показать еще"}
+          </Button>
+        }
+        {searchKey &&
+          <>
+            {
+              allSubscriptions.filter(subscr => subscr.name.toLowerCase().includes(searchKey.toLowerCase())).map((subscription) => 
+              <Subscription key={subscription.id} subscription={subscription}/> 
+              )
+            }
+          </>
+        
+        }
+        <SearchBar setSearchKey={setSearchKey} />
+
        
              
         
@@ -71,7 +104,7 @@ export function Subscriptions() {
         <Subscription label='TEDx Talks' amountNewVideos={23}/>
         <Subscription label='Stanford iOS' amountNewVideos={4}/>
         <Subscription label='Udacity' amountNewVideos={114}/> */}
-        <Divider/>
+        
       </React.Fragment>
     );  
 }

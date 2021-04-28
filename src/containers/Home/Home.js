@@ -47,9 +47,8 @@ export default function Home(){
               color='red'
               content='Подписаться'
               label={{ basic: true, color: 'red', pointing: 'left', content: '2,048' }}
-            >
-                Подписаться
-            </Button>
+              />              
+            
             <Button icon='like' />
             <Button icon='bell' />
             <Button icon='ellipsis vertical' />
