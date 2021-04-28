@@ -3,36 +3,53 @@ import {Subscription} from "./Subscription/Subscription";
 import {Button, Divider, Icon} from "semantic-ui-react";
 import {SideBarHeader} from '../SideBarHeader/SideBarHeader';
 
-import SideBarItem from '../SideBarItem/SideBarItem';
+//import SideBarItem from '../SideBarItem/SideBarItem';
 import axios from 'axios';
 
 export function Subscriptions() {
 
   const [showAll, setShowAll] = useState(false);
-  const [subscriptions, setSibscriptions] = useState([]);
+  const [subscriptions, setSibscriptions] = useState({
+    avatar: "res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130",
+    name: "Никита Вадимович"}
+  );
 
-  useEffect(() => {
+  const [hiddenavtrs, setHiddenavtrs] = useState({
+    avatar: "res.php?src=storage/uploads/46f76053c4c77fc742027ab9d443d8d6-948.png&q=100&w=130&h=130",
+    name: "Михаил"
+  });
+
+/*   useEffect(() => {
     axios.get(`https://youinroll.com/profile/1?api=v1.0`)
     .then((res) => {
-      console.log(res.data.response.name);
+      
+      console.log(typeof res.data);  
+      setSibscriptions(res.data.response);
     })
-    .catch((err) => console.log(err))
-  },[]);
+    .catch((err) => console.log(err));
+
+    axios.get(`https://youinroll.com/profile/948?api=v1.0`)
+    .then((res) => { 
+      
+      setHiddenavtrs(res.data.response);
+    })
+    .catch((err) => console.log(err)) 
+  },[]); */
 
 
-  const initial = [1,2]
+  const initial = [1,2];
   const hidden = [3,4];
  
     return (
       <React.Fragment>
         <SideBarHeader title='Отслеживаемые каналы'/>
         {initial.map((chanel) => 
-          <Subscription key={chanel} label='YouInRoll' amountNewVideos={chanel}/>          
+          <Subscription key={chanel} pictr={subscriptions.avatar} label={subscriptions.name} amountNewVideos={chanel}/>          
         )}
-        {showAll && 
+        {showAll && hiddenavtrs &&
           <> 
             {hidden.map((chanel) => 
-              <Subscription key={chanel} label='YouInRoll Музыка' broadcasting/>          
+              <Subscription key={chanel} pictr={hiddenavtrs.avatar} label={hiddenavtrs.name} broadcasting/>          
             )}
           </>
         }

@@ -21,14 +21,12 @@ class App extends Component {
       <AppLayout>
         <SideBar />
         <Switch>
-          
           <Route path="/feed/trending" component={Trending}/>
           <Route path="/results" render={() => <Search key={this.props.location.key}/>}/>
           <Route path="/watch" render={() => <Watch key={this.props.location.key}/>}/>
           <Route path="/categories" component={Categories}/>
           <Route path="/сhannels" component={Channels}/>
           <Route path="/" component={Home}/>
-
         </Switch>
       </AppLayout>
     );

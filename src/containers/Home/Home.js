@@ -1,15 +1,101 @@
 import React from 'react';
-import {connect} from "react-redux";
-import * as videoActions from "../../store/actions/video";
+import { Container, Grid, Image, Button, Icon } from 'semantic-ui-react';
+//import {connect} from "react-redux";
+//import * as videoActions from "../../store/actions/video";
 import './Home.scss';
-//import {SideBar} from '../SideBar/SideBar';
+// import {SideBar} from '../SideBar/SideBar';
 //import HomeContent from './HomeContent/HomeContent';
-import {bindActionCreators} from 'redux';
-import {getYoutubeLibraryLoaded} from '../../store/reducers/api';
-import {getVideoCategoryIds, videoCategoriesLoaded, videosByCategoryLoaded} from '../../store/reducers/videos';
+//import {bindActionCreators} from 'redux';
+//import {getYoutubeLibraryLoaded} from '../../store/reducers/api';
+//import {getVideoCategoryIds, videoCategoriesLoaded, videosByCategoryLoaded} from '../../store/reducers/videos';
 
 
-class Home extends React.Component {
+
+
+export default function Home(){
+
+  return(
+    <div className="home">
+      <div className="mainImg">
+        <Image 
+          src='https://youinroll.com/storage/uploads/98ccb39ea4855732d019c98aa8f54a62-1.jpg' 
+          fluid 
+          />
+      </div>
+      <Container as="div" fluid >
+        <div className="channel-info">
+        
+          <div className="avatarblock">
+            <Image 
+                  src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' 
+                  size='tiny' 
+                  circular 
+                  inline
+              />  
+          </div>
+          <div className="descriptionblock">          
+            <h2>Никита Вадимович</h2>
+            <span className="aboutprofile">
+              <strong className="bigger">58</strong> Отслеживают {' '}
+            </span>
+            <span className="aboutprofile">
+              <strong className="bigger">672</strong> Видео
+            </span>
+          </div>
+          <div className="buttonblock">
+            <Button
+              color='red'
+              content='Подписаться'
+              label={{ basic: true, color: 'red', pointing: 'left', content: '2,048' }}
+            >
+                Подписаться
+            </Button>
+            <Button icon='like' />
+            <Button icon='bell' />
+            <Button icon='ellipsis vertical' />
+          </div>
+          
+            
+
+        </div>
+      </Container>
+      
+      <Container>
+        fsdfdsalk 
+        Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
+You've visited this page many times. Last visit: 4/26/21
+        
+       </Container>
+    </div>    
+  )
+}
+
+/* class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,11 +108,10 @@ class Home extends React.Component {
       <div className="home">
 
         <h1>Мой канал</h1>
-
-     {/*  <SideBar/> */}
-      {/*   <HomeContent
+       
+       <HomeContent
           bottomReachedCallback={this.bottomReachedCallback}
-          showLoader={this.shouldShowLoader()}/> */}
+          showLoader={this.shouldShowLoader()}/> 
       </div>
     );
   }
@@ -92,4 +177,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({fetchMostPopularVideos, fetchVideoCategories, fetchMostPopularVideosByCategory}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home); */

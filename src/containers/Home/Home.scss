@@ -3,10 +3,66 @@
 .home {
   margin-left: $sidebar-left-width;
   position: relative;
-  display: inline-block;
-  
+  padding-top: 0px;
+  margin-top: 0px;
+  display: inline-block; 
+  width: 100%;
+  background-color: #fafafa;
+}
+
+
+.channel-info {
+  display: flex;
+  margin-left: 20px;
+  background-color: white;
+  justify-content: space-between;  
+  padding: 20px;
+}
+
+.avatarblock{
+  display: inline;
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;  
+}
+
+.descriptionblock{
+  display: Inline-block;
+  width: 300px;  
+  vertical-align: middle;
+  flex-grow: 1;
+  padding-left: 20px;
   
 }
+
+.buttonblock{
+  display: block;
+  width: 800px;  
+  
+}
+
+
+
+.mainImg {
+  position: relative;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+
+
+.aboutprofile {
+  color: #616161;
+  font-size: 14px;
+  padding-right: 30px;
+}
+
+.bigger {
+  font-size: 20px;
+}
+
+
+
 @media all and (min-width: 476px) {
   .responsive-video-grid-container {
     max-width: 240px;

@@ -16,7 +16,7 @@ export function Subscription(props) {
     <Menu.Item>
       <div className='subscription'>
         <div>
-          <Image src='https://via.placeholder.com/28x28' avatar/>
+          <Image src={`https://youinroll.com/${props.pictr}`} avatar/>
           <span>{props.label}</span>
         </div>
         {rightElement}

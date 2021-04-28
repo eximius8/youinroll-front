@@ -1,13 +1,24 @@
-import {VideoGrid} from '../../../components/VideoGrid/VideoGrid';
+//import {VideoGrid} from '../../../components/VideoGrid/VideoGrid';
 import React from 'react';
 import './HomeContent.scss';
-import {getMostPopularVideos, getVideosByCategory} from '../../../store/reducers/videos';
-import {connect} from 'react-redux';
-import {InfiniteScroll} from '../../../components/InfiniteScroll/InfiniteScroll';
+//import {getMostPopularVideos, getVideosByCategory} from '../../../store/reducers/videos';
+//import {connect} from 'react-redux';
+//import {InfiniteScroll} from '../../../components/InfiniteScroll/InfiniteScroll';
 
-const AMOUNT_TRENDING_VIDEOS = 12;
+//const AMOUNT_TRENDING_VIDEOS = 12;
 
-export class HomeContent extends React.Component {
+
+
+export default function() {
+
+  return(
+    <div>
+      fgasdhfgsjdagfshd
+    </div>
+  )
+}
+
+/* export class HomeContent extends React.Component {
   render() {
     const trendingVideos = this.getTrendingVideos();
     const categoryGrids = this.getVideoGridsForCategories();
@@ -45,4 +56,4 @@ function mapStateToProps(state) {
     mostPopularVideos: getMostPopularVideos(state),
   };
 }
-export default connect(mapStateToProps, null)(HomeContent);
+export default connect(mapStateToProps, null)(HomeContent); */
