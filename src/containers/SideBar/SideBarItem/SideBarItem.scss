@@ -1,26 +1,26 @@
 .sidebar-item {
   background: white;
-/*   span {
+   span {
     i.icon {
       margin-right: 20px;
-      color: #888888;
+      color: #a970ff;
     }
   }
 
   div {
     i.icon {      
-      color: #888888;
+      color: #000000;
     }
-  } */
+  } 
 
   &.highlight-item {
     span {
       font-weight: 600;
     }
 
-    i.icon {
-      color: #a970ff;
-    }
+     i.icon {
+      color: #a970ff;      
+    } 
   }
 }
 

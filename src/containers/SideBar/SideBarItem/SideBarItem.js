@@ -14,7 +14,7 @@ export class SideBarItem extends React.Component {
         <Menu.Item className={['sidebar-item', highlight].join(' ')}>
           <div className='sidebar-item-alignment-container'>            
               <span>
-                <Icon size='large' name={this.props.icon}/>
+                <Icon size='large' name={this.props.icon}/>{' '}
               </span>
               <span>{this.props.label}</span> 
           </div>

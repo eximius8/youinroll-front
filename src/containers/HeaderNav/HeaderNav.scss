@@ -3,6 +3,10 @@
   The .ui.menu is needed otherwise there's a more specific rule from semantic UI
   we use this rule to tweak the SCSS
 */
+.dropdown{
+  color: white;
+}
+
 .ui.menu.top-menu {
   background: rgba(18, 18, 18, 0.8);
   backdrop-filter: blur(40px);

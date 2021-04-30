@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import SideBarItem, {SideBarItemSmall} from './SideBarItem/SideBarItem';
 import {Menu, Divider } from 'semantic-ui-react';
 import './SideBar.scss';
@@ -11,11 +11,11 @@ import {Subscriptions} from './Subscriptions/Subscriptions';
 
 
 
-export function SideBar() {
+export function SideBar({isOpen, setIsOpen}) {
 
   //const isOpen = useContext(MenuContext);
 
-  const [isOpen, setIsOpen] = useState(true);
+  // const [isOpen, setIsOpen] = useState(true);
   
   // fill="#888888" stroke="#888888"
   if (isOpen){
@@ -35,12 +35,12 @@ export function SideBar() {
               </button>
               }
           />
-          <SideBarItem path='/' label='Мой канал' icon='warehouse'/>
-          <SideBarItem label='Чат' icon='comments outline'/>
+          <SideBarItem path='/' label=' Мой канал' icon='home'/>
+          <SideBarItem label=' Чат' icon='comments outline'/>
           <Divider/>
-          <SideBarItem path='/feed/trending' label='В тренде' icon='fire'/>
-          <SideBarItem path='/categories' label='Категории' icon='compass'/>
-          <SideBarItem path='/сhannels' label='Каналы' icon='users'  />       
+          <SideBarItem path='/feed/trending' label=' В тренде ' icon='fire'/>
+          <SideBarItem path='/categories' label=' Категории ' icon='compass'/>
+          <SideBarItem path='/сhannels' label=' Каналы ' icon='users'  />       
           
           <Divider/>
           <SideBarHeader title='Мои курсы'/>

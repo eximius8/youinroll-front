@@ -28,7 +28,7 @@ export default function Channels () {
 
 
     return (
-        <Container fluid className="categories">
+        <Container fluid className="channelcontainer">
             <h1>Каналы</h1>
             <Carousel
                 plugins={[

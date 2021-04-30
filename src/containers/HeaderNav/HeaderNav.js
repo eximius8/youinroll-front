@@ -1,12 +1,20 @@
 import React, {useState} from 'react';
-import {Form, Icon, Image, Input, Menu, Button, Header, Modal} from 'semantic-ui-react';
+import {Form, Icon, Image, Input,  Menu, Dropdown} from 'semantic-ui-react';// Button, Header, Modal
 import './HeaderNav.scss';
 // import logo from '../../assets/images/logo.jpg';
 import {Link, withRouter} from 'react-router-dom';
 
 
+const options = [
+  { key: 1, text: 'Настройки', value: 1 },
+  { key: 2, text: 'Помощь', value: 2 },
+  { key: 3, text: 'Обратная связь', value: 3 },
+  { key: 4, text: 'Выйти', value: 4 },
+]
 
-function UserModal({ctabut}) {
+
+
+/* function UserModal({ctabut}) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -34,7 +42,7 @@ function UserModal({ctabut}) {
       </Modal.Actions>
     </Modal>
   )
-}
+} */
 
 function HeaderNav({props}) { 
 
@@ -103,11 +111,17 @@ function HeaderNav({props}) {
               <Icon className='header-icon' name='block layout' size='large'/>
             </Menu.Item>            
             <Menu.Item name='avatar'>
-              <UserModal 
-              ctabut={
-                <Image src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' avatar/>
-               }
-              />              
+              
+              <Menu.Menu position='right'>
+                <Dropdown
+                  item
+                  className="dropdown"
+                  /* simple */
+                  trigger={<Image src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' avatar/>}
+                  direction='left'
+                  options={options}
+                />  
+              </Menu.Menu>      
             </Menu.Item>
           </Menu.Menu>
         </Menu.Menu>

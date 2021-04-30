@@ -1,5 +1,5 @@
-import React from 'react';
-import { Container,  Image, Button } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Container, Popup, Image, Button } from 'semantic-ui-react';
 //import {connect} from "react-redux";
 //import * as videoActions from "../../store/actions/video";
 import './Home.scss';
@@ -12,7 +12,10 @@ import './Home.scss';
 import TabExampleSecondaryPointing from "../../components/ChannelTabs/CHannelTabs";
 
 
+
 export default function Home(){
+
+  const [isWatched, setIsWatched] = useState(false)
 
   return(
     <div className="home">
@@ -47,8 +50,16 @@ export default function Home(){
               content='Подписаться'
               label={{ basic: true, color: 'red', pointing: 'left', content: '2,048' }}
               />              
+            <Popup 
+              content={isWatched ? "Перестать отслеживать" : 'Отслеживать'} 
+              position='top right'
+              trigger={<Button 
+                        icon='like' 
+                        color={isWatched ? "blue" : "default"}
+                        onClick={() => setIsWatched(!isWatched)}             
+                      />} 
+            />
             
-            <Button icon='like' />
             <Button icon='bell' />
             <Button icon='ellipsis vertical' />
           </div>

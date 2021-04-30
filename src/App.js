@@ -11,7 +11,7 @@ import Search from './containers/Search/Search';
 import Categories from './containers/Categories/Categories';
 import Channels from './containers/Channels/Channels';
 
-import {SideBar} from './containers/SideBar/SideBar';
+
 
 const API_KEY = process.env.REACT_APP_YT_API_KEY;
 
@@ -20,10 +20,9 @@ const API_KEY = process.env.REACT_APP_YT_API_KEY;
 class App extends Component {
   render() {
     return (
-      <AppLayout>
-        <SideBar />
+      <AppLayout>        
         <Switch>
-          <Route path="/feed/trending" component={Trending}/>
+          <Route path="/feed/trending" render={() => <Trending key={this.props.location.key}/>}/>
           <Route path="/results" render={() => <Search key={this.props.location.key}/>}/>
           <Route path="/watch" render={() => <Watch key={this.props.location.key}/>}/>
           <Route path="/categories" component={Categories}/>

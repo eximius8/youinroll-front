@@ -26,7 +26,7 @@ function LessonCard(){
 
 
 const extra = (
-  <a>
+  <a href="/">
     <Label as='a' color='teal' tag>
       Бесплатно
     </Label>
@@ -49,7 +49,7 @@ function CourseCard(){
 
 
 
-const lessons = [1,2,3,4,5,6,8,9,10,12]
+const lessons = [1,2,3,4,5]
 
 function LatestLessons ({secname, subsecs, cols, elem}) {
   return (
@@ -89,13 +89,11 @@ const panes = [
     {
       menuItem: 'Видео',
       render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane>,
-    },
-    ,
+    },    
     {
       menuItem: 'Изображения',
       render: () => <Tab.Pane attached={false}>Изображения</Tab.Pane>,
-    },
-    ,
+    },    
     {
       menuItem: 'Расписание',
       render: () => <Tab.Pane attached={false}>Расписание</Tab.Pane>,
