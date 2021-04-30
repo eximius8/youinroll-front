@@ -1,6 +1,29 @@
 import React from 'react';
-import { Tab, Grid, Container, Card, Feed, Divider, Label } from 'semantic-ui-react';
+import { Image, Tab, Grid, Container, Card, Feed, Divider, Label } from 'semantic-ui-react';
 // import YouTube from 'react-youtube';
+
+
+function ChannelDescription(){
+
+  return(
+    <>
+      <h3>Основатель проекта</h3>
+      <Image
+        rounded
+        fluid        
+        src="https://youinroll.com/storage/uploads/72c8d58e186d88bd2258ec6b1e132cba-1.jpg" 
+      />
+      <p>
+      Описание
+Инженер — Программист занимаюсь созданием сообщества
+Образовательного видеохостинга - YouinRoll
+Контакты для связи:
+Почта: youinroll@gmail.com
+Все интересующие вас вопросы можно задать мне в сообщениях прямо на моем канале или комментариях.
+      </p>
+    </>
+  )
+}
 
 function LessonCard(){
   const src="https://youinroll.com/storage/media/22e2b7b3d99134319dc38dd138c08bf5-1.jpg";
@@ -83,7 +106,7 @@ const panes = [
       menuItem: 'Описание',
       render: () => 
       <Tab.Pane attached={false}>
-           
+          <ChannelDescription />
       </Tab.Pane>,
     },
     {

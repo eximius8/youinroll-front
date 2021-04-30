@@ -9,7 +9,7 @@ import './Home.scss';
 //import {getYoutubeLibraryLoaded} from '../../store/reducers/api';
 //import {getVideoCategoryIds, videoCategoriesLoaded, videosByCategoryLoaded} from '../../store/reducers/videos';
 
-import TabExampleSecondaryPointing from "../../components/ChannelTabs/CHannelTabs";
+import TabExampleSecondaryPointing from "../../components/ChannelTabs/ChannelTabs";
 
 
 
