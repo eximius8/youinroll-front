@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Subscription} from "./Subscription/Subscription";
-import {Button,  Icon, Form} from "semantic-ui-react";
+import {Button,  Icon, Form, Input} from "semantic-ui-react";
 import {SideBarHeader} from '../SideBarHeader/SideBarHeader';
 import "./Subscription.scss";
 
@@ -14,7 +14,8 @@ const SearchBar = ({setSearchKey}) => {
     <div className="subsciptionsearch">
       <Form >
         <Form.Field>        
-          <input 
+          <Input 
+            icon='search'
             placeholder='Быстрый поиск' 
             onChange={(e) => setSearchKey(e.target.value) }
           />
@@ -94,8 +95,7 @@ export function Subscriptions() {
         
         }
         <SearchBar setSearchKey={setSearchKey} />
-
-       
+      
              
         
         

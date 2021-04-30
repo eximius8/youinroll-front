@@ -15,6 +15,8 @@ import {SideBar} from './containers/SideBar/SideBar';
 
 const API_KEY = process.env.REACT_APP_YT_API_KEY;
 
+
+
 class App extends Component {
   render() {
     return (
@@ -33,7 +35,7 @@ class App extends Component {
   }
   componentDidMount() {
     this.loadYoutubeApi();
-  }
+  } 
 
   loadYoutubeApi() {
     const script = document.createElement("script");

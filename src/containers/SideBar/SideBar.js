@@ -35,7 +35,7 @@ export function SideBar() {
               </button>
               }
           />
-          <SideBarItem path='/' label='Мой канал' icon='home'/>
+          <SideBarItem path='/' label='Мой канал' icon='warehouse'/>
           <SideBarItem label='Чат' icon='comments outline'/>
           <Divider/>
           <SideBarItem path='/feed/trending' label='В тренде' icon='fire'/>

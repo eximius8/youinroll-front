@@ -1,12 +1,22 @@
 @import '../../styles/shared.scss';
 
 .home {
-  margin-left: $sidebar-left-width;
-  position: relative;
+  padding-left: $sidebar-left-width;
+  width: 100%; /* calc(100% - $sidebar-left-width); */
+ /* position: relative;*/
   padding-top: 0px;
   margin-top: 0px;
-  display: inline-block; 
-  width: 100%;
+  display: inline-block;   
+  background-color: #fafafa;
+}
+
+.homenarrow {
+  margin-left: $sidebar-left-shrinked-width;
+ /*  width: calc(100% - $sidebar-left-shrinked-width); */
+ /* position: relative;*/
+  padding-top: 0px;
+  margin-top: 0px;
+  display: inline-block;   
   background-color: #fafafa;
 }
 
@@ -36,13 +46,13 @@
   width: 300px;  
   vertical-align: middle;
   flex-grow: 1;
-  padding-left: 20px;
+  padding-left: 10px;
   
 }
 
 .buttonblock{
   display: block;
-  width: 600px;  
+  width: 350px;  
   
 }
 

@@ -20,11 +20,10 @@ export default function Home(){
         <Image 
           src='https://youinroll.com/storage/uploads/98ccb39ea4855732d019c98aa8f54a62-1.jpg' 
           fluid 
-          />
+        />
       </div>
       <Container as="div" fluid >
-        <div className="channel-info">
-        
+        <div className="channel-info">        
           <div className="avatarblock">
             <Image 
                   src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' 
@@ -61,36 +60,9 @@ export default function Home(){
       </Container>
       
       <Container>
-        fsdfdsalk 
-        Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21Semantic UI React is the official React integration for Semantic UI . jQuery Free. Declarative API. Augmentation. Shorthand Props. Sub Components.
-You've visited this page many times. Last visit: 4/26/21
+       
         
-       </Container>
+      </Container>
     </div>    
   )
 }
