@@ -74,15 +74,17 @@ export function Subscriptions() {
           </>
         }
         {subscrToShow && !searchKey &&
-          <Button 
-            fluid 
-            icon 
-            labelPosition='left'
-            onClick={() => setShowAll(!showAll)}
-          >
-            <Icon name={showAll ? "angle up" : "angle down"} />
-            {showAll ? "Свернуть" : "Показать еще"}
-          </Button>
+          <div className="showmorebutton">
+            <Button 
+              fluid 
+              icon 
+              labelPosition='left'            
+              onClick={() => setShowAll(!showAll)}
+            >
+              <Icon name={showAll ? "angle up" : "angle down"} />
+              {showAll ? "Свернуть" : "Показать еще"}
+            </Button>
+          </div>
         }
         {searchKey &&
           <>

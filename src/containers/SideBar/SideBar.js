@@ -35,6 +35,7 @@ export function SideBar({isOpen, setIsOpen}) {
               </button>
               }
           />
+          <Divider/>
           <SideBarItem path='/' label=' Мой канал' icon='home'/>
           <SideBarItem label=' Чат' icon='comments outline'/>
           <Divider/>

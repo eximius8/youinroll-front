@@ -6,10 +6,10 @@ import {Link, withRouter} from 'react-router-dom';
 
 
 const options = [
-  { key: 1, text: 'Настройки', value: 1 },
-  { key: 2, text: 'Помощь', value: 2 },
-  { key: 3, text: 'Обратная связь', value: 3 },
-  { key: 4, text: 'Выйти', value: 4 },
+  { key: 1, text: 'Настройки', value: 1, icon: 'cog', className: "dropitem" },
+  { key: 2, text: 'Помощь', value: 2, icon: "help circle", className: "dropitem"  },
+  { key: 3, text: 'Обратная связь', value: 3, icon: "commenting", className: "dropitem"  },
+  { key: 4, text: 'Выйти', value: 4, icon: 'log out', className: "dropitem"  },
 ]
 
 
@@ -112,13 +112,15 @@ function HeaderNav({props}) {
             </Menu.Item>            
             <Menu.Item name='avatar'>
               
-              <Menu.Menu position='right'>
+              <Menu.Menu position='left'>
                 <Dropdown
                   item
+                  fluid
                   className="dropdown"
                   /* simple */
                   trigger={<Image src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' avatar/>}
                   direction='left'
+                  floating
                   options={options}
                 />  
               </Menu.Menu>      

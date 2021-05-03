@@ -1,4 +1,11 @@
+@import '../../../styles/shared.scss';
+
 .subsciptionsearch{  
-    position: sticky;
+    position: fixed;
     bottom: 0px;
+    width: $sidebar-left-width;
+}
+
+.showmorebutton{
+    padding-bottom: 40px;
 }

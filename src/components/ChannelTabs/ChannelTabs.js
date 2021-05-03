@@ -1,6 +1,8 @@
 import React from 'react';
-import { Image, Tab, Grid, Container, Card, Feed, Divider, Label } from 'semantic-ui-react';
+import { Image, Tab, Grid, Container, Card, Feed, Divider, Label, Icon, Button } from 'semantic-ui-react';
 // import YouTube from 'react-youtube';
+
+import "./ChannelTabs.scss";
 
 
 function ChannelDescription(){
@@ -13,14 +15,63 @@ function ChannelDescription(){
         fluid        
         src="https://youinroll.com/storage/uploads/72c8d58e186d88bd2258ec6b1e132cba-1.jpg" 
       />
-      <p>
-      Описание
-Инженер — Программист занимаюсь созданием сообщества
-Образовательного видеохостинга - YouinRoll
-Контакты для связи:
-Почта: youinroll@gmail.com
-Все интересующие вас вопросы можно задать мне в сообщениях прямо на моем канале или комментариях.
-      </p>
+      <Container fluid >
+        <Grid columns={2} divided>
+          <Grid.Row>
+            <Grid.Column>
+              <div className="description">
+                <h2>Описание</h2>
+                <p>Инженер — Программист занимаюсь созданием сообщества
+                Образовательного видеохостинга - YouinRoll</p>                
+                <p>Все интересующие вас вопросы можно задать мне в сообщениях прямо на моем канале или комментариях.</p>
+              </div>
+            </Grid.Column>
+            <Grid.Column>
+              <div className="description">
+                <h2>Связаться</h2>
+                <div>
+                  <Button>
+                    Задать вопрос
+                  </Button>
+                  <Button>
+                    Открыть чат
+                  </Button>
+                </div>
+                <div>
+                  <Icon 
+                    name="facebook"
+                    size="large"                  
+                  />
+                  <a href="#">
+                    Никита Вадимович
+                  </a>
+                </div>
+                <div>
+                  <Icon 
+                    name="vk"
+                    size="large"                  
+                  />
+                  <a href="#">
+                    Никита Вадимович
+                  </a>
+                </div>
+                <div>
+                  <Icon 
+                    name="mail"
+                    size="large"                  
+                  />
+                  <a mailto="youinroll@youinroll.com">
+                    youinroll@youinroll.com
+                  </a>
+                </div>
+                
+              </div>
+            </Grid.Column>            
+          </Grid.Row>         
+        </Grid>       
+      </Container> 
+      <h2>Отзывы</h2>      
+         
     </>
   )
 }

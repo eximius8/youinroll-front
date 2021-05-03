@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Popup, Image, Button } from 'semantic-ui-react';
+import { Container, Popup, Image, Button, Icon } from 'semantic-ui-react';
 //import {connect} from "react-redux";
 //import * as videoActions from "../../store/actions/video";
 import './Home.scss';
@@ -15,7 +15,8 @@ import TabExampleSecondaryPointing from "../../components/ChannelTabs/ChannelTab
 
 export default function Home(){
 
-  const [isWatched, setIsWatched] = useState(false)
+  const [isWatched, setIsWatched] = useState(false);
+  const [isBroken, setIsBroken] = useState(false);
 
   return(
     <div className="home">
@@ -45,20 +46,26 @@ export default function Home(){
             </span>
           </div>
           <div className="buttonblock">
+            <Button              
+                icon={isWatched ? isBroken ? "heartbeat" : 'like' : null} 
+                color={isWatched ? isBroken ? "red" : null : "blue"}
+                onClick={() => setIsWatched(!isWatched)}     
+                onMouseEnter={() => setIsBroken(isWatched && true)}
+                onMouseLeave={() => setIsBroken(false)}
+              >
+              {isWatched ? null : <><Icon name='like' /><span>Отслеживать</span></>}
+            </Button>
             <Button
               color='red'
               content='Подписаться'
               label={{ basic: true, color: 'red', pointing: 'left', content: '2,048' }}
-              />              
-            <Popup 
+              />
+            
+            {/* <Popup 
               content={isWatched ? "Перестать отслеживать" : 'Отслеживать'} 
               position='top right'
-              trigger={<Button 
-                        icon='like' 
-                        color={isWatched ? "blue" : "default"}
-                        onClick={() => setIsWatched(!isWatched)}             
-                      />} 
-            />
+              trigger={} 
+            /> */}
             
             <Button icon='bell' />
             <Button icon='ellipsis vertical' />
