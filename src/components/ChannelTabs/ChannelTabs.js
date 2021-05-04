@@ -60,7 +60,7 @@ function ChannelDescription(){
                     name="mail"
                     size="large"                  
                   />
-                  <a mailto="youinroll@youinroll.com">
+                  <a href="mailto:youinroll@youinroll.com">
                     youinroll@youinroll.com
                   </a>
                 </div>
