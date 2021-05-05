@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Popup, Image, Button, Icon } from 'semantic-ui-react';
+import { Container, Image, Button, Icon } from 'semantic-ui-react';
 //import {connect} from "react-redux";
 //import * as videoActions from "../../store/actions/video";
 import './Home.scss';

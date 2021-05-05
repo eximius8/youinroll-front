@@ -5,6 +5,95 @@ import { Image, Tab, Grid, Container, Card, Feed, Divider, Label, Icon, Button }
 import "./ChannelTabs.scss";
 
 
+import Timeline from 'react-calendar-timeline';
+// make sure you include the timeline stylesheet or the timeline will not be styled
+import 'react-calendar-timeline/lib/Timeline.css';
+import moment from 'moment';
+//https://github.com/namespace-ee/react-calendar-timeline#usage
+
+//import "~react-image-gallery/styles/css/image-gallery.css";
+import ImageGallery from 'react-image-gallery';
+
+
+const images = [
+  {
+    original: 'https://picsum.photos/id/1018/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1018/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1015/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1015/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1019/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1019/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1020/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1020/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1016/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1016/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1023/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1023/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1021/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1021/250/150/',
+  },
+  {
+    original: 'https://picsum.photos/id/1022/1000/600/',
+    thumbnail: 'https://picsum.photos/id/1022/250/150/',
+  },
+];
+
+
+const groups = [{ id: 1, title: 'Python новичкам' }, { id: 2, title: 'JavaScript профи' }]
+
+const items = [
+  {
+    id: 1,
+    group: 1,
+    title: 'Практика',
+    start_time: moment(),
+    end_time: moment().add(1, 'hour')
+  },
+  {
+    id: 2,
+    group: 2,
+    title: 'Теория',
+    start_time: moment().add(-0.5, 'hour'),
+    end_time: moment().add(0.5, 'hour')
+  },
+  {
+    id: 3,
+    group: 1,
+    title: 'Практика',
+    start_time: moment().add(2, 'hour'),
+    end_time: moment().add(3, 'hour')
+  }
+]
+
+
+function TimeTable(){
+
+  return(
+    <div>
+      Расписание Никиты Вадимовича
+      <Timeline
+        groups={groups}
+        items={items}
+        defaultTimeStart={moment().add(-12, 'hour')}
+        defaultTimeEnd={moment().add(12, 'hour')}
+      />
+  </div>
+  )
+};
+
+
 function ChannelDescription(){
 
   return(
@@ -42,7 +131,7 @@ function ChannelDescription(){
                     name="facebook"
                     size="large"                  
                   />
-                  <a href="#">
+                  <a href="https://google.com">
                     Никита Вадимович
                   </a>
                 </div>
@@ -51,7 +140,7 @@ function ChannelDescription(){
                     name="vk"
                     size="large"                  
                   />
-                  <a href="#">
+                  <a href="https://google.com">
                     Никита Вадимович
                   </a>
                 </div>
@@ -166,11 +255,11 @@ const panes = [
     },    
     {
       menuItem: 'Изображения',
-      render: () => <Tab.Pane attached={false}>Изображения</Tab.Pane>,
+      render: () => <Tab.Pane attached={false}><ImageGallery items={images} /></Tab.Pane>,
     },    
     {
       menuItem: 'Расписание',
-      render: () => <Tab.Pane attached={false}>Расписание</Tab.Pane>,
+      render: () => <Tab.Pane attached={false}><TimeTable /></Tab.Pane>,
     },
   ]
   
