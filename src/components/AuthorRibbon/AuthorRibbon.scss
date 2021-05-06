@@ -1,0 +1,137 @@
+@import '../../styles/shared.scss';
+
+
+.avatarka{
+  border:  3px solid #fa1ed2;
+  padding: 2px;
+}
+
+.live{
+    margin: auto;
+    display: inline-block;
+    background-color: #e91916;
+    color: white;
+    padding: 3px;
+    border-radius: 20%;
+}
+
+.wrapper {
+ /*  padding-left: $sidebar-left-width; */
+  width: 100%; /* calc(100% - $sidebar-left-width); */
+ /* position: relative;*/
+  padding-top: 0px;
+  margin-top: 0px;
+  display: inline-block;   
+  background-color: #fafafa;
+}
+
+.homenarrow {
+  margin-left: $sidebar-left-shrinked-width;
+ /*  width: calc(100% - $sidebar-left-shrinked-width); */
+ /* position: relative;*/
+  padding-top: 0px;
+  margin-top: 0px;
+  display: inline-block;   
+  background-color: #fafafa;
+}
+
+.channel-info {
+  display: flex;
+  margin-left: 20px;
+  background-color: white;
+  justify-content: space-between;  
+  padding: 20px;
+}
+
+.tabmenu {
+  margin-left: 20px;
+  display: Inline-block;
+  width: 100%;
+}
+
+.avatarblock{
+  display: inline;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;  
+}
+
+.descriptionblock{
+  display: Inline-block;
+  width: 300px;  
+  vertical-align: middle;
+  flex-grow: 1;
+  padding-left: 10px;
+  
+}
+
+.buttonblock{
+  display: inline;
+  
+  
+}
+
+
+
+.mainImg {
+  position: relative;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+
+
+.aboutprofile {
+  color: #616161;
+  font-size: 14px;
+  padding-right: 30px;
+}
+
+.bigger {
+  font-size: 20px;
+}
+
+
+
+@media all and (min-width: 476px) {
+  .responsive-video-grid-container {
+    max-width: 240px;
+  }
+}
+
+@media all and (min-width: 700px) {
+  .responsive-video-grid-container {
+    max-width: 472px;
+  }
+}
+
+@media all and (min-width: 900px) {
+  .responsive-video-grid-container {
+    max-width: 667px;
+  }
+}
+
+@media all and (min-width: 1096px) {
+  .responsive-video-grid-container {
+    max-width: 864px;
+  }
+}
+
+@media all and (min-width: 1370px) {
+  .responsive-video-grid-container {
+    max-width: 1096px;
+  }
+}
+
+@media all and (min-width: 1370px) {
+  .responsive-video-grid-container {
+    max-width: 1096px;
+  }
+}
+
+@media all and (min-width: 1560px) {
+  .responsive-video-grid-container {
+    max-width: 1284px;
+  }
+}

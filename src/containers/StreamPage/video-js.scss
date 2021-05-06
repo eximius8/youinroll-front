@@ -2,6 +2,11 @@
   padding: 10px;
 }
 
+.sidechat{
+  position: fixed;
+  overflow-y: scroll;
+  margin-bottom: 2px;
+}
 
 .video-js .vjs-big-play-button .vjs-icon-placeholder:before, .vjs-button > .vjs-icon-placeholder:before, .video-js .vjs-modal-dialog, .vjs-modal-dialog .vjs-modal-dialog-content {
   position: absolute;
@@ -245,8 +250,8 @@
     content: "\f11e"; }
 
 .video-js {
-  display: block;
-  vertical-align: top;
+  display: inline-block;
+  vertical-align: middle;
   box-sizing: border-box;
   color: #fff;
   background-color: #000;
@@ -386,11 +391,16 @@ body.vjs-full-window {
   -o-transition: all 0.4s;
   transition: all 0.4s; }
 
-.vjs-big-play-centered .vjs-big-play-button {
-  top: 50%;
+.vjs-big-play-centered .vjs-big-play-button { 
+  position: absolute;
   left: 50%;
-  margin-top: -0.75em;
-  margin-left: -1.5em; }
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
+  /*  top: 50%;
+  left: 50%;  */
+  /* margin-top: -0.75em;
+  margin-left: -1.5em; */ }
 
 .video-js:hover .vjs-big-play-button,
 .video-js .vjs-big-play-button:focus {
