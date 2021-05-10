@@ -12,7 +12,7 @@ import { Grid } from 'semantic-ui-react'
 
 
 const videoJsOptions = {
-    autoplay: true,
+    autoplay: false,
     controls: true,
     fluid: true,
   
@@ -26,18 +26,15 @@ const videoJsOptions = {
 export default function Stream(){
 
   return(
-    <div className="videobox">
-        <Grid columns={16}>            
-                <Grid.Column width={11}>
-                    <VideoPlayer { ...videoJsOptions } />
-                    <AuthorRibbon authId={1} />
-                </Grid.Column>
-                <Grid.Column width={5}>
-                  <SideChat />
-                </Grid.Column>           
-               
-      </Grid>
-    </div>    
+    <div className='streambox'>
+      <div className="videobox">
+        <VideoPlayer { ...videoJsOptions } />
+        <AuthorRibbon authId={1} />          
+      </div>
+      <div className="chatbox">
+        <SideChat />    
+      </div> 
+    </div>
   )
 }
 

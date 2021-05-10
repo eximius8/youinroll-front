@@ -5,6 +5,7 @@
   "dependencies": {
     "@brainhubeu/react-carousel": "^2.0.3",
     "axios": "^0.21.1",
+    "firebase": "^8.5.0",
     "interactjs": "^1.10.11",
     "javascript-time-ago": "^2.0.13",
     "moment": "^2.29.1",
@@ -12,6 +13,7 @@
     "react": "^16.13.1",
     "react-calendar-timeline": "^0.27.0",
     "react-dom": "^16.13.1",
+    "react-firebase-hooks": "^3.0.4",
     "react-image-gallery": "^1.0.9",
     "react-linkify": "^1.0.0-alpha",
     "react-redux": "^7.2.1",
@@ -27,7 +29,7 @@
     "semantic-ui-react": "^1.2.0",
     "video.js": "^7.11.8"
   },
-  "homepage": "https://youinroll.com/react1",
+  "homepage": "https://youinrol.firebaseapp.com",
   "scripts": {
     "dev": "source .env.local && npm start",
     "start": "react-scripts start",

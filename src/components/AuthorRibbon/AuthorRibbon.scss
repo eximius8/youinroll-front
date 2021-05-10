@@ -8,11 +8,14 @@
 
 .live{
     margin: auto;
+    position: relative;
+    top: -1.5rem;
     display: inline-block;
     background-color: #e91916;
     color: white;
-    padding: 3px;
+    padding: 3px 10px;
     border-radius: 20%;
+    font-weight: bold;
 }
 
 .wrapper {

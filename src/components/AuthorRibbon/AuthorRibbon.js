@@ -44,7 +44,7 @@ export default function AuthorRibbon({authId}){
                       className="avatarka"                      
                   />
                   <div className="live">
-                    LIVE
+                    В КЕФИРЕ
                   </div>
               </div>
               <div className="descriptionblock">          

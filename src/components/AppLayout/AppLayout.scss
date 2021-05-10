@@ -2,7 +2,8 @@
 
 .app-layout {
   & > *:not(:first-child) {
-    margin-top: $header-nav-height;
+    padding-top: $header-nav-height;
+    height: auto;
   }
 
   ::-webkit-scrollbar {

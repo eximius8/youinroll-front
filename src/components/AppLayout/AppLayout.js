@@ -18,17 +18,14 @@ export function AppLayout(props) {
   };
 
   return (
-    <ScrollToTop>
-      <div className='app-layout'>
+    <ScrollToTop>      
         <HeaderNav />
-        <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
+        <div className='app-layout'>
+        <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />        
           <main style={mainStyle}>
             {props.children}
-          </main>
-               
-        {/*  <MenuContext.Provider value={isMenuSmall}>
-          
-        </MenuContext.Provider> */}
+          </main>              
+       
       </div>
     </ScrollToTop>
   );
