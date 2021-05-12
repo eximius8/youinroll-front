@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import "./SideChat.scss";
 import { Button, Form} from 'semantic-ui-react'
 
@@ -26,7 +26,7 @@ const firestore = firebase.firestore();
 function SignIn(){
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
+    auth.signInWithRedirect(provider);
   } 
 
   return (
@@ -43,13 +43,17 @@ function SignOut() {
 }
 
 function ChatRoom() {
-  const dummy = useRef();
-  
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);  
+  const maxmessages = isMobile ? 5 : 50;
+  const dummy = useRef();  
   const [formValue, setFormValue] = useState('');
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt', "desc").limit(50);
-
+  const query = messagesRef.orderBy('createdAt', "desc").limit(maxmessages);
   const [messages] = useCollectionData(query, { idField: 'id' });
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 760)    
+  },[setIsMobile])
 
 
 
@@ -114,78 +118,14 @@ function ChatMessage(props) {
 
 export default function SideChat() {
   const [user] = useAuthState(auth);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);  
 
   return (
     <>    
-      <h5 id="chatheader">Чат трансляции</h5>
+      {!isMobile && <h5 id="chatheader">Чат трансляции</h5>}
       
         {user ? <ChatRoom /> : <SignIn /> }
      
     </>
   )
 }
-
-/* 
-export default function SideChat() {
-
-  const [typedComment, setTypedComment] = useState("");
-  const [comments, setComments] = useState([
-    {
-      ava: 'https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130',
-      authorname: "Никита Вадимович",
-      commenttext: "Пишем в чат",
-      timeadded: 'August 19, 2020 23:15:30 GMT+00:00',
-    }
-  ])
-  const [user] = useAuthState(auth);
-  
-    
-  
-    function addComment(){
-      
-      const currentDate = new Date();
-      const addedComment = {
-        ava: 'https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130',
-        authorname: "Никита Вадимович",
-        commenttext: typedComment,
-        timeadded: currentDate.toLocaleString(),
-      };
-      setComments(oldComments => [...oldComments, addedComment]);
-      setTypedComment("");
-    }
-  
-    return (  
-        <div>
-            <h3>Чат трансляции</h3>     
-          {comments.map(
-            (comment, key) => 
-              <div key={key} className="chatmessage">  
-                  <strong className="author">{comment.authorname}: </strong>
-                  <span>
-                    {comment.commenttext}
-                  </span>        
-              </div>
-          )}   
-      
-          <Form 
-            reply
-            onSubmit={() => addComment()}
-            className="formchat"
-          >
-            <Form.TextArea 
-              className="commentForm"
-              placeholder='Ваш комментарий'
-              value={typedComment} 
-              onChange={(e) => setTypedComment(e.target.value)} 
-            />
-            <Button 
-              content='Добавить комментарий' 
-              labelPosition='left' 
-              icon='edit' 
-              primary
-              disabled={!typedComment}
-            />
-          </Form>
-        </div>
-      )
-  } */

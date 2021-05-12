@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SideBarItem, {SideBarItemSmall} from './SideBarItem/SideBarItem';
 import {Menu, Divider } from 'semantic-ui-react';
 import './SideBar.scss';
@@ -14,8 +14,17 @@ import {Subscriptions} from './Subscriptions/Subscriptions';
 export function SideBar({isOpen, setIsOpen}) {
 
   //const isOpen = useContext(MenuContext);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);
 
-  // const [isOpen, setIsOpen] = useState(true);
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 760)    
+  },[setIsMobile])
+
+  if (isMobile){
+    return (
+      null
+    )
+  }
   
   // fill="#888888" stroke="#888888"
   if (isOpen){

@@ -1,6 +1,12 @@
 @import '../../styles/shared.scss';
 
 
+
+.mobilewrapper {
+  display: inline-block;   
+  margin: 0px;
+}
+
 .avatarka{
   border:  3px solid #fa1ed2;
   padding: 2px;

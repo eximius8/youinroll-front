@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Form, Icon, Image, Input,  Menu, Dropdown} from 'semantic-ui-react';// Button, Header, Modal
 import './HeaderNav.scss';
 // import logo from '../../assets/images/logo.jpg';
@@ -14,40 +14,9 @@ const options = [
 
 
 
-/* function UserModal({ctabut}) {
-  const [open, setOpen] = useState(false)
 
-  return (
-    <Modal
-      basic
-      onClose={() => setOpen(false)}
-      onOpen={() => setOpen(true)}
-      open={open}
-      size='small'
-      trigger={ctabut}
-    >
-      <Header icon>        
-        Профиль пользователя
-      </Header>
-      <Modal.Content>
-        <p>
-          Профиль пользователя Никита Вадимович
-        </p>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button basic color='red' inverted onClick={() => setOpen(false)}>
-          <Icon name='remove' /> Закрыть
-        </Button>
-        
-      </Modal.Actions>
-    </Modal>
-  )
-} */
+function SearchBar({props}){
 
-function HeaderNav({props}) { 
-
-  //isMenuSmall, setIsMenuSmall
-  
   const [searchquery, setQuery ] = useState("");
   
   const  onInputChange = (event) => {
@@ -59,6 +28,30 @@ function HeaderNav({props}) {
     props.history.push(`/results?search_query=${escapedSearchQuery}`);
   };
 
+  return(
+    <Menu.Item className='search-input'>
+      <Form onSubmit={onSubmit}>
+        {/* 4 */}
+        <Form.Field>
+          <Input placeholder='Искать'
+                  size='small'
+                  action='Поиск'
+                  value={searchquery}
+                  onChange={onInputChange}
+          />
+        </Form.Field>
+      </Form>
+    </Menu.Item>
+  )
+}
+
+function HeaderNav() { 
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 760)    
+  },[setIsMobile])
   
    
     return (
@@ -81,19 +74,7 @@ function HeaderNav({props}) {
         </Menu.Item>
         {/* 3 */}
         <Menu.Menu className='nav-container'>
-          <Menu.Item className='search-input'>
-            <Form onSubmit={onSubmit}>
-              {/* 4 */}
-              <Form.Field>
-                <Input placeholder='Искать'
-                       size='small'
-                       action='Поиск'
-                       value={searchquery}
-                       onChange={onInputChange}
-                />
-              </Form.Field>
-            </Form>
-          </Menu.Item>
+          {!isMobile && <SearchBar />}
           {/* 5 */}
           <Menu.Menu position='right'>
             <Menu.Item>

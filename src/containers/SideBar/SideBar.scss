@@ -27,6 +27,19 @@ $sidebar-hover-color: #ebebeb;
   width:  $sidebar-left-shrinked-width;
 }
 
+.mobilesb{
+  position: fixed;
+  display: block;
+  top: 90%;
+  margin: -100px 0 0 0;
+  height: 50px;
+  width: 100%;
+}
+
+/* #sideBar {
+ 
+}
+ */
 
 .floatright {
   //float: right;
