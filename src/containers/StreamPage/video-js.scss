@@ -1,6 +1,17 @@
+@import '../../styles/shared.scss';
+
 .streamplaymobile{
   position: fixed;
   top: 0px;
+}
+
+.divicon{
+  position: fixed;
+  top: $header-nav-height;
+  right: 0px;
+  padding: 0px;
+  margin: 0px;
+  z-index: 5000;
 }
 
 .streambox{

@@ -44,7 +44,7 @@ function SignOut() {
 
 function ChatRoom() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);  
-  const maxmessages = isMobile ? 5 : 50;
+  const maxmessages = isMobile ? 5 : 25;
   const dummy = useRef();  
   const [formValue, setFormValue] = useState('');
   const messagesRef = firestore.collection('messages');
@@ -76,30 +76,30 @@ function ChatRoom() {
   }
 
   return (
-  <>
-    <main>
+  <div className={!isMobile && "chat"}>
+    <main className="chatmain">
       {messages && messages.slice(0).reverse().map(msg => <ChatMessage key={msg.id} message={msg} />)}
       <span ref={dummy}></span>
     </main>
-
-    <Form 
-      onSubmit={sendMessage}
-      id='chatform'
-    >      
-      <Form.Input
-        value={formValue} 
-        onChange={(e) => setFormValue(e.target.value)} 
-        placeholder="Напишите что-нибудь в чат"            
-      />          
-      <Form.Button 
-        content='Чат' 
-        disabled={!formValue} 
-        primary
-        id="chatbutton"
-      />
-        
-    </Form>
-  </>)
+    <div className="chatdiv">
+      <Form 
+        onSubmit={sendMessage}
+        id='chatform'
+      >      
+        <Form.Input
+          value={formValue} 
+          onChange={(e) => setFormValue(e.target.value)} 
+          placeholder="fsd"          
+        />          
+        <Form.Button 
+          content='Чат' 
+          disabled={!formValue} 
+          primary
+          id="chatbutton"
+        />
+      </Form>
+    </div>
+  </div>)
 }
 
 function ChatMessage(props) {
@@ -108,8 +108,7 @@ function ChatMessage(props) {
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
-    <div className={`message ${messageClass}`}>
-     
+    <div className={`message ${messageClass}`}>     
       <p><strong>{displayName}: </strong>{text}</p>
     </div>
   </>)
@@ -118,7 +117,12 @@ function ChatMessage(props) {
 
 export default function SideChat() {
   const [user] = useAuthState(auth);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);  
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 760)    
+  },[setIsMobile])
+
 
   return (
     <>    

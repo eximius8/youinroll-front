@@ -54,63 +54,65 @@ function HeaderNav() {
   },[setIsMobile])
   
    
-    return (
-      // 1
-      <Menu borderless className='top-menu' fixed='top'>
-        {/* 2 */}
-        {/* <Menu.Item header >
-          <button 
-            onClick={() => setIsMenuSmall(!isMenuSmall)}            
-            className="noHover" 
-          >          
-            <Icon name="bars" size='big' className='burger-top' />
-          </button>   
-        </Menu.Item> */}
-         {/* 2' */}
-        <Menu.Item header className='logo'>
-          <Link to='/'>          
-            <Image src={`https://youinroll.com/YNRLogo.png`}  size='mini'/>
-          </Link>
-        </Menu.Item>
-        {/* 3 */}
-        <Menu.Menu className='nav-container'>
-          {!isMobile && <SearchBar />}
-          {/* 5 */}
-          <Menu.Menu position='right'>
-            <Menu.Item>
-              {/* 6 */}
-              <Icon className='header-icon' name='video camera' size='large'/>
-            </Menu.Item>
+  return (
+    // 1
+    <Menu borderless className='top-menu' fixed='top'>
+      {/* 2 */}
+      {/* <Menu.Item header >
+        <button 
+          onClick={() => setIsMenuSmall(!isMenuSmall)}            
+          className="noHover" 
+        >          
+          <Icon name="bars" size='big' className='burger-top' />
+        </button>   
+      </Menu.Item> */}
+        {/* 2' */}
+      <Menu.Item header className='logo'>
+        <Link to='/'>          
+          <Image src={`https://youinroll.com/YNRLogo.png`}  size='mini'/>
+        </Link>
+      </Menu.Item>
+      {/* 3 */}
+      <Menu.Menu className='nav-container'>
+        {!isMobile && <SearchBar />}
+        {/* 5 */}
+        <Menu.Menu position='right'>
+          <Menu.Item>
+            {/* 6 */}
+            <Icon className='header-icon' name='video camera' size='large'/>
+          </Menu.Item>
+          
+          {/* <Menu.Item>
+            <Icon className='header-icon' name='chat' size='large'/>
+          </Menu.Item> */}
+          <Menu.Item>
+            <Icon className='header-icon' name='bell outline' size='large'/>
+          </Menu.Item>
+          <Menu.Item>
+            <Icon className='header-icon' name='block layout' size='large'/>
+          </Menu.Item>            
+          <Menu.Item name='avatar'>
             
-            {/* <Menu.Item>
-              <Icon className='header-icon' name='chat' size='large'/>
-            </Menu.Item> */}
-            <Menu.Item>
-              <Icon className='header-icon' name='bell outline' size='large'/>
-            </Menu.Item>
-            <Menu.Item>
-              <Icon className='header-icon' name='block layout' size='large'/>
-            </Menu.Item>            
-            <Menu.Item name='avatar'>
-              
-              <Menu.Menu position='left'>
-                <Dropdown
-                  item
-                  fluid
-                  className="dropdown"
-                  /* simple */
-                  trigger={<Image src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' avatar/>}
-                  direction='left'
-                  floating
-                  options={options}
-                />  
-              </Menu.Menu>      
-            </Menu.Item>
-          </Menu.Menu>
+            <Menu.Menu position='left'>
+              <Dropdown
+                item
+                fluid
+                className="dropdown"
+                /* simple */
+                trigger={<Image 
+                  src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' 
+                  avatar/>}
+                direction='left'
+                floating
+                options={options}
+              />  
+            </Menu.Menu>      
+          </Menu.Item>
         </Menu.Menu>
-       
-      </Menu>
-    );
+      </Menu.Menu>
+      
+    </Menu>
+  );
   
   
 }

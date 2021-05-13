@@ -1,11 +1,33 @@
 @import '../../styles/shared.scss';
 
+.chatinput{
+    width: 70%;
+    height: 25px;      
+}
+
+.chatmain{
+    height: calc(100% - 20px - 66px);
+    overflow-y: scroll;   
+}
+
+.chatdiv {
+    
+    background-color: white;
+    height: 20px;   
+    padding-left: 5px;
+    padding-right: 5px; 
+    /* width: inherit; */
+}
+
 .message {
     padding: .5rem;    
 }
 
 #chatbutton {
+    /* position: absolute; */
+    right: 0;
     float: right;
+    top : 4px;
 }
 
 .signinbutton {
@@ -22,10 +44,12 @@
     color: #00ad96;
 }
 
-.formchat{
+
+
+/* .formchat{
     position: sticky;
     bottom: 0px;    
-}
+} */
 
 .chatmessage {
     padding-bottom: 10px;    
@@ -38,9 +62,9 @@
   
 .chat {
     width: 100%;
-    padding-left: 5px;
+    padding-left: 0px;
     height: 83vh;
-    /* overflow-y: scroll;    */    
+/*     overflow-y: scroll;  */  
 }
 
 #chatheader {

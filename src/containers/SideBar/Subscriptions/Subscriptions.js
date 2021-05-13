@@ -7,6 +7,8 @@ import "./Subscription.scss";
 //import SideBarItem from '../SideBarItem/SideBarItem';
 import axios from 'axios';
 
+import {UserContext} from "../../../App";
+
 
 const SearchBar = ({setSearchKey}) => {
 
@@ -32,6 +34,8 @@ export function Subscriptions() {
   const [subscrToShow, setSubscrToShow] = useState(null);
   const [allSubscriptions, setAllSubscriptions] = useState([]);
   const [searchKey, setSearchKey ] = useState("");
+  const user = React.useContext(UserContext)
+  console.log(user)
 
   
 
