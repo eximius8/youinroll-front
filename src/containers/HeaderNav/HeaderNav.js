@@ -5,11 +5,16 @@ import './HeaderNav.scss';
 import {Link, withRouter} from 'react-router-dom';
 
 
+const LogOut = () =>{
+  localStorage.setItem('loggeduser', '');
+  window.location.reload();
+}
+
 const options = [
   { key: 1, text: 'Настройки', value: 1, icon: 'cog', className: "dropitem" },
   { key: 2, text: 'Помощь', value: 2, icon: "help circle", className: "dropitem"  },
   { key: 3, text: 'Обратная связь', value: 3, icon: "commenting", className: "dropitem"  },
-  { key: 4, text: 'Выйти', value: 4, icon: 'log out', className: "dropitem"  },
+  { key: 4, text: 'Выйти', value: 4, icon: 'log out', className: "dropitem", onClick: LogOut  },
 ]
 
 
@@ -69,7 +74,7 @@ function HeaderNav() {
         {/* 2' */}
       <Menu.Item header className='logo'>
         <Link to='/'>          
-          <Image src={`https://youinroll.com/YNRLogo.png`}  size='mini'/>
+          <Image src={`logo.png`}  size='small'/>
         </Link>
       </Menu.Item>
       {/* 3 */}

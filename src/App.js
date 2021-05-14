@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Home from './containers/Home/Home';
 import {AppLayout} from './components/AppLayout/AppLayout';
 import {Route, Switch, withRouter} from 'react-router-dom';
@@ -17,7 +17,13 @@ const UserContext = React.createContext({user: {}})
 
 function App() {
 
-  const [ user, setUser ] = useState(null);
+  const [ user, setUser ] = useState(localStorage.getItem('loggeduser') || "");
+  
+  useEffect(() => {
+    localStorage.setItem('loggeduser', user);
+    
+  }, [user])
+ 
 
   if (!user){
     return(
