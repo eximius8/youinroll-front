@@ -6,13 +6,16 @@ import 'semantic-ui-css/semantic.min.css';
 import { Provider } from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 import {configureStore} from './store/configureStore';
+import UserContextProvider from "./contexts/UserContext";
 
 const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App/>
+      <UserContextProvider>
+        <App/>
+      </UserContextProvider>      
     </BrowserRouter>
   </Provider>, document.getElementById('root'));
 registerServiceWorker();

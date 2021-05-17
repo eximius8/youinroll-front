@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useContext} from 'react';
 import Home from './containers/Home/Home';
 import {AppLayout} from './components/AppLayout/AppLayout';
 import {Route, Switch, withRouter} from 'react-router-dom';
@@ -12,40 +12,34 @@ import Categories from './containers/Categories/Categories';
 import Channels from './containers/Channels/Channels';
 import Stream from "./containers/StreamPage/StreamPage";
 import LoginForm from "./containers/LoginForm/LoginForm"
+import { UserContext } from "./contexts/UserContext";
 
-const UserContext = React.createContext({user: {}})
+
 
 function App() {
 
-  const [ user, setUser ] = useState(localStorage.getItem('loggeduser') || "");
-  
-  useEffect(() => {
-    localStorage.setItem('loggeduser', user);
-    
-  }, [user])
+  const { user } = useContext(UserContext);
  
 
   if (!user){
     return(
-      <LoginForm setUser={setUser} />
+      <LoginForm />
     )
   }
   
   
-    return (
-    <UserContext.Provider user={user}>
-      <AppLayout>        
-        <Switch>
-          <Route path="/feed/trending" component={Stream}/>
-         {/*  <Route path="/results" render={() => <Search key={this.props.location.key}/>}/>
-          <Route path="/watch" render={() => <Watch key={this.props.location.key}/>}/> */}
-          <Route path="/categories" component={Categories}/>
-          <Route path="/сhannels" component={Channels}/>
-          <Route path="/" component={Home}/>
-        </Switch>
-      </AppLayout>
-    </UserContext.Provider>
-    )    
+  return (    
+    <AppLayout>        
+      <Switch>
+        <Route path="/feed/trending" component={Stream}/>
+        {/*  <Route path="/results" render={() => <Search key={this.props.location.key}/>}/>
+        <Route path="/watch" render={() => <Watch key={this.props.location.key}/>}/> */}
+        <Route path="/categories" component={Categories}/>
+        <Route path="/сhannels" component={Channels}/>
+        <Route path="/" component={Home}/>
+      </Switch>
+    </AppLayout>
+  )    
 }
 
 function mapDispatchToProps(dispatch) {

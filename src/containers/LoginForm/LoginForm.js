@@ -1,13 +1,18 @@
 
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
 
 import axios from "axios";
+import Particles from 'react-particles-js';
+import {PConfig} from "./partConfig";
+import { UserContext } from "../../contexts/UserContext";
+
+import "./LoginForm.scss";
 
 
+export default function LoginForm (){
 
-
-export default function LoginForm ({setUser}){
+    const { setUser } = useContext(UserContext);
 
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
@@ -31,46 +36,53 @@ export default function LoginForm ({setUser}){
             console.log(error);
           });       
     } 
-
+// https://youinroll.com/YNRLogo.png
     return(
-    <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-        <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as='h2' color='teal' textAlign='center'>
-            <Image src='https://youinroll.com/YNRLogo.png' /> Войти в аккаунт youinroll
-        </Header>
-        <Form size='large'>
-            <Segment stacked>
-                <Form.Input 
-                    fluid icon='user' 
-                    iconPosition='left' 
-                    placeholder='E-mail' 
-                    onChange={(e) => setLogin(e.target.value)}
-                    error={wrongdata}
+        <>            
+            <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle' className="panel">                
+                <Grid.Column style={{ maxWidth: 450 }}>
+                <Header as='h2' color='teal' textAlign='center'>
+                    <Image src='https://youinroll.com/YNRLogo.png' /> Войти в аккаунт youinroll
+                </Header>
+                <Form size='large'>
+                    <Segment stacked>
+                        <Form.Input 
+                            fluid icon='user' 
+                            iconPosition='left' 
+                            placeholder='E-mail' 
+                            onChange={(e) => setLogin(e.target.value)}
+                            error={wrongdata}
+                        />
+                        <Form.Input
+                            fluid
+                            icon='lock'
+                            iconPosition='left'
+                            placeholder='Пароль'
+                            type='password'
+                            error={wrongdata}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <Button 
+                            color='teal' 
+                            fluid size='large'
+                            disabled={!login && !password}
+                            onClick={getUser}
+                        >
+                            Войти
+                        </Button>
+                    </Segment>
+                </Form>
+                <Message>
+                    Нет аккаунта? <a href='#'>Зарегистрируйтесь</a>
+                </Message>
+                </Grid.Column>
+            </Grid>
+            <div className="particls">
+                <Particles 
+                    params={PConfig}
                 />
-                <Form.Input
-                    fluid
-                    icon='lock'
-                    iconPosition='left'
-                    placeholder='Пароль'
-                    type='password'
-                    error={wrongdata}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <Button 
-                    color='teal' 
-                    fluid size='large'
-                    disabled={!login && !password}
-                    onClick={getUser}
-                >
-                    Войти
-                </Button>
-            </Segment>
-        </Form>
-        <Message>
-            Нет аккаунта? <a href='#'>Зарегистрируйтесь</a>
-        </Message>
-        </Grid.Column>
-    </Grid>
+            </div>
+        </>
     )
 }
 
