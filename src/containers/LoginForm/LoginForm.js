@@ -22,13 +22,14 @@ export default function LoginForm (){
         /* curl -X POST -F 'login=mdtrunov@gmail.com' -F 'password=!123456789' http://dev.youinroll.com/login?api=v1.1
         {"response":{"user_id":"948","token":"b7"}}
         */
-       console.log(login);
-       console.log(password);
+      /*  console.log(login);
+       console.log(password); */
 
         axios.post('https://dev.youinroll.com/login?api=v1.1', `login=${login}&password=${password}`  )
           .then(function (response) {
               if (response.data.response.user_id){
-                setUser({user: response.data.response});
+                  console.log(response.data.response.user_id);
+                setUser(response.data.response.user_id);
               }     
           })
           .catch(function (error) {

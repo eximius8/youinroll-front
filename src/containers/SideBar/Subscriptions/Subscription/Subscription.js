@@ -1,10 +1,10 @@
 import React from 'react';
 import {Icon, Image, Menu} from "semantic-ui-react";
 import './Subscription.scss';
+import { Link } from "react-router-dom";
 
 export function Subscription({subscription}) {
-
-  
+    
 
   let rightElement = null;
   const broadcasting = Boolean(subscription.onAir);
@@ -32,8 +32,10 @@ export function Subscription({subscription}) {
     <Menu.Item>
       <div className='subscription'>
         <div>
-          <Image src={avaurl} avatar/>
-          <span>{subscription.name}</span>
+          <Link to={`/${subscription.id}`}>
+            <Image src={avaurl} avatar/>
+            <span>{subscription.name}</span>
+          </Link>
         </div>
         {rightElement}
       </div>

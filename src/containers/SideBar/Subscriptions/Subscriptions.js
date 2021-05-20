@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import {Subscription} from "./Subscription/Subscription";
-import {Button,  Icon, Form, Input} from "semantic-ui-react";
-import {SideBarHeader} from '../SideBarHeader/SideBarHeader';
+import React, { useEffect, useState, useContext } from 'react';
+import { Subscription } from "./Subscription/Subscription";
+import { Button,  Icon, Form, Input } from "semantic-ui-react";
+import { SideBarHeader } from '../SideBarHeader/SideBarHeader';
+import { UserContext } from "../../../contexts/UserContext";
 import "./Subscription.scss";
 
 //import SideBarItem from '../SideBarItem/SideBarItem';
 import axios from 'axios';
 
-import {UserContext} from "../../../App";
 
 
 const SearchBar = ({setSearchKey}) => {
@@ -28,37 +28,35 @@ const SearchBar = ({setSearchKey}) => {
 }
 
 export function Subscriptions() {
-
+  
+  const { userdata } = useContext(UserContext);
   const [showAll, setShowAll] = useState(false);
   const [subscriptions, setSibscriptions] = useState([]);
   const [subscrToShow, setSubscrToShow] = useState(null);
   const [allSubscriptions, setAllSubscriptions] = useState([]);
-  const [searchKey, setSearchKey ] = useState("");
-  const user = React.useContext(UserContext)
-  console.log(user)
+  const [searchKey, setSearchKey ] = useState("");  
 
   
 
-   useEffect(() => {    
-    axios.get("https://youinroll.com/profile/1/subscriptions?api=v1.1")
-    .then((res) => {    
-      let subscribers = res.data.response;        
-      subscribers.sort( function(a, b){return b.onAir - a.onAir}  );
-      setAllSubscriptions(subscribers); 
-      
-      if (subscribers.length <= 5){
-        setSibscriptions(subscribers);        
-      }else{   
-        setSibscriptions(subscribers.slice(0,5));     
-        setSubscrToShow(subscribers.slice(5, subscribers.length));
-      }      
-    })
-    .catch((err) => console.log(err));
+   useEffect(() => {
+     if (userdata){
+      axios.get(`https://youinroll.com/profile/${userdata.id}/subscriptions?api=v1.1`)
+      .then((res) => {    
+        let subscribers = res.data.response;        
+        subscribers.sort( function(a, b){return b.onAir - a.onAir}  );
+        setAllSubscriptions(subscribers); 
+        
+        if (subscribers.length <= 5){
+          setSibscriptions(subscribers);        
+        }else{   
+          setSibscriptions(subscribers.slice(0,5));     
+          setSubscrToShow(subscribers.slice(5, subscribers.length));
+        }      
+      })
+      .catch((err) => console.log(err))
+     }
 
-  },[]); 
-
-
-
+  },[userdata]); 
  
     return (
       <React.Fragment>

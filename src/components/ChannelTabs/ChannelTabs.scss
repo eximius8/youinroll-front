@@ -11,3 +11,10 @@
 .description div {
     padding-bottom: 20px;
 }
+
+.wrapped{
+    overflow-x: scroll;
+    overflow-y: hide;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+  }

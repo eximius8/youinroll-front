@@ -1,12 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {Form, Icon, Image, Input,  Menu, Dropdown} from 'semantic-ui-react';// Button, Header, Modal
 import './HeaderNav.scss';
 // import logo from '../../assets/images/logo.jpg';
 import {Link, withRouter} from 'react-router-dom';
+import { UserContext } from "../../contexts/UserContext";
+import { WindowSizeContext } from "../../contexts/WindowSizeContext";
 
 
 const LogOut = () =>{
-  localStorage.setItem('loggeduser', '');
+  localStorage.setItem('loggeduserid', '');
   window.location.reload();
 }
 
@@ -18,16 +20,15 @@ const options = [
 ]
 
 
-
-
 function SearchBar({props}){
 
   const [searchquery, setQuery ] = useState("");
   
-  const  onInputChange = (event) => {
+  
+  const onInputChange = (event) => {
     setQuery(event.target.value);    
   };
-
+  
   const onSubmit = () => {
     const escapedSearchQuery = encodeURI(searchquery);
     props.history.push(`/results?search_query=${escapedSearchQuery}`);
@@ -51,12 +52,10 @@ function SearchBar({props}){
 }
 
 function HeaderNav() { 
+  
+  const { userdata } = useContext(UserContext); 
+  const { isMobile } = useContext(WindowSizeContext);
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth <= 760)    
-  },[setIsMobile])
   
    
   return (
@@ -82,22 +81,21 @@ function HeaderNav() {
         {!isMobile && <SearchBar />}
         {/* 5 */}
         <Menu.Menu position='right'>
-          <Menu.Item>
-            {/* 6 */}
-            <Icon className='header-icon' name='video camera' size='large'/>
-          </Menu.Item>
-          
-          {/* <Menu.Item>
-            <Icon className='header-icon' name='chat' size='large'/>
-          </Menu.Item> */}
-          <Menu.Item>
-            <Icon className='header-icon' name='bell outline' size='large'/>
-          </Menu.Item>
-          <Menu.Item>
-            <Icon className='header-icon' name='block layout' size='large'/>
-          </Menu.Item>            
-          <Menu.Item name='avatar'>
-            
+          {!isMobile &&
+            <>
+              <Menu.Item>
+                {/* 6 */}
+                <Icon className='header-icon' name='video camera' size='large'/>
+              </Menu.Item>
+              <Menu.Item>
+                <Icon className='header-icon' name='bell outline' size='large'/>
+              </Menu.Item>
+              <Menu.Item>
+                <Icon className='header-icon' name='block layout' size='large'/>
+              </Menu.Item>
+            </>}
+
+          <Menu.Item name='avatar'>            
             <Menu.Menu position='left'>
               <Dropdown
                 item
@@ -105,7 +103,7 @@ function HeaderNav() {
                 className="dropdown"
                 /* simple */
                 trigger={<Image 
-                  src='https://youinroll.com/res.php?src=storage/uploads/d1882293076e6e91c230bb2fecba82e9-1.jpg&q=100&w=130&h=130' 
+                  src={userdata && `${userdata.avatar}`}
                   avatar/>}
                 direction='left'
                 floating

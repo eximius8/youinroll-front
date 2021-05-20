@@ -1,5 +1,25 @@
 @import '../../styles/shared.scss';
 
+.authoravatar {
+  border: 4px solid;
+  border-color: #B016FF;
+  padding: 4px;
+}
+
+.mobileauthoravatar {
+  border: 4px solid;
+  border-color: #B016FF;
+  padding: 4px;
+  position: relative;
+  left: 30px;
+  top: -20px;
+  z-index: 10000;
+  background: white;
+
+}
+
+
+
 .home {
  /*  padding-left: $sidebar-left-width; */
   width: 100%; /* calc(100% - $sidebar-left-width); */
@@ -8,47 +28,41 @@
   margin-top: 0px;
   display: inline-block;   
   background-color: #fafafa;
+} 
+
+.authorgrid {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.homenarrow {
-  margin-left: $sidebar-left-shrinked-width;
- /*  width: calc(100% - $sidebar-left-shrinked-width); */
- /* position: relative;*/
-  padding-top: 0px;
-  margin-top: 0px;
-  display: inline-block;   
-  background-color: #fafafa;
+.whitecolor {
+  background-color: white;
 }
 
-.channel-info {
+.username {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.channel {
   display: flex;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   background-color: white;
   justify-content: space-between;  
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .tabmenu {
   margin-left: 20px;
   display: Inline-block;
   width: 100%;
-}
-
-.avatarblock{
-  display: inline;
-  width: 100px;
-  height: 100px;
-  vertical-align: middle;  
-}
-
-.descriptionblock{
-  display: Inline-block;
-  width: 300px;  
-  vertical-align: middle;
-  flex-grow: 1;
-  padding-left: 10px;
   
 }
+
+
+
 
 .buttonblock{
   display: inline;
@@ -57,12 +71,6 @@
 }
 
 
-
-.mainImg {
-  position: relative;
-  padding-top: 0px;
-  margin-top: 0px;
-}
 
 
 

@@ -4,7 +4,7 @@ import AuthorRibbon from "../../components/AuthorRibbon/AuthorRibbon";
 import SideChat from "../SideChat/SideChat";
 
 import VideoPlayer from './video.js';
-import { Grid, Button, Icon } from 'semantic-ui-react'
+import { Grid, Button } from 'semantic-ui-react'
 
 
 //const commentDate = new Date();

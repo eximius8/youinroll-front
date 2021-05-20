@@ -4,16 +4,13 @@ import {Menu, Divider } from 'semantic-ui-react';
 import './SideBar.scss';
 import {SideBarHeader} from './SideBarHeader/SideBarHeader';
 import {Subscriptions} from './Subscriptions/Subscriptions';
-//import {SideBarFooter} from './SideBarFooter/SideBarFooter';
 
-//import {MenuContext} from "../../components/AppLayout/AppLayout";
 
 
 
 
 export function SideBar({isOpen, setIsOpen}) {
 
-  //const isOpen = useContext(MenuContext);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);
 
   useEffect(() => {

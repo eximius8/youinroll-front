@@ -18,15 +18,14 @@ import { UserContext } from "./contexts/UserContext";
 
 function App() {
 
-  const { user } = useContext(UserContext);
+  const { user } = useContext(UserContext); 
  
 
   if (!user){
     return(
       <LoginForm />
     )
-  }
-  
+  }  
   
   return (    
     <AppLayout>        
@@ -36,6 +35,7 @@ function App() {
         <Route path="/watch" render={() => <Watch key={this.props.location.key}/>}/> */}
         <Route path="/categories" component={Categories}/>
         <Route path="/сhannels" component={Channels}/>
+        <Route path="/:userid" component={Home}/>
         <Route path="/" component={Home}/>
       </Switch>
     </AppLayout>

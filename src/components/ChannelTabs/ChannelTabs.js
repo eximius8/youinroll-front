@@ -265,6 +265,8 @@ const panes = [
   
 export default function TabExampleSecondaryPointing () {
     return(
-    <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
+      
+        <Tab menu={{ secondary: true, pointing: true, className: "wrapped" }} panes={panes} />
+      
     )
 }

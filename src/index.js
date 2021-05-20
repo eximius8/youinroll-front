@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 import {configureStore} from './store/configureStore';
 import UserContextProvider from "./contexts/UserContext";
+import WindowSizeContextProvider from "./contexts/WindowSizeContext";
 
 const store = configureStore();
 
@@ -14,7 +15,9 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <UserContextProvider>
-        <App/>
+        <WindowSizeContextProvider>
+          <App/>
+        </WindowSizeContextProvider>
       </UserContextProvider>      
     </BrowserRouter>
   </Provider>, document.getElementById('root'));
