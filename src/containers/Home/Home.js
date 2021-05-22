@@ -27,8 +27,10 @@ const UserRibbon = ({userid}) =>{
  
 
   useEffect(() => {
+    console.log(userid);
+    console.log(user);
     let uidd = userid ? userid : user;    
-    axios.get(`https://youinroll.com/profile/${uidd}?api=v1.0`)
+    axios.get(`https://youinroll.com/profile/${uidd}/info?api=v1.0`)
       .then((resp) => {
           let uData = resp.data.response;
           let avaurl = "";
@@ -47,50 +49,11 @@ const UserRibbon = ({userid}) =>{
 
   }, [user, userid])
 
-  /* if (isMobile){
-    return(
-    <>     
-      <Image 
-        src='https://youinroll.com/storage/uploads/98ccb39ea4855732d019c98aa8f54a62-1.jpg' 
-        fluid 
-      />
-      <Image                   
-        src={userdata && userdata.avatar}
-        size="tiny"                
-        circular 
-        inline
-        className="mobileauthoravatar"
-      />
-      <span className="username">{userdata && userdata.name}</span><br/>
-              {userdata && !isMobile && `${userdata.views} просмотров`} 
-      <div className="authorgrid">
-        <Grid>                  
-            <Grid.Column mobile={4} computer={1} tablet={3}>
-              
-            </Grid.Column>
-            <Grid.Column verticalAlign="middle" mobile={6} computer={3} tablet={5}>
-              
-            </Grid.Column>
-            <Grid.Column 
-              verticalAlign="middle" 
-              mobile={6} 
-              computer={5} 
-              tablet={8}
-              floated="right"
-              textAlign="right"
-            >
-              {userdata && <ButtonBlock userid={userid} usertoview={userdata} />}
-            </Grid.Column> 
-        </Grid>
-      </div>           
-    </>
-    )
-  } */
-  
+ 
   return(
     <>     
       <Image 
-        src='https://youinroll.com/storage/uploads/98ccb39ea4855732d019c98aa8f54a62-1.jpg' 
+        src={userdata && userdata.banner ? `https://youinroll.com/${userdata.banner}` : 'https://youinroll.com/storage/uploads/98ccb39ea4855732d019c98aa8f54a62-1.jpg' }
         fluid 
       />
       <div className="authorgrid">
@@ -136,7 +99,7 @@ const ButtonBlock = ({userid, usertoview}) => {
 
   if (usertoview.user_id === userid || !userid){
     return(    
-      <Button icon='setting' size="large" />    
+      <Button icon='setting' size="large" content='Редактировать' />    
     )
   }
 

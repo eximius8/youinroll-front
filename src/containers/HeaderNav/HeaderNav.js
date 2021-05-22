@@ -8,7 +8,9 @@ import { WindowSizeContext } from "../../contexts/WindowSizeContext";
 
 
 const LogOut = () =>{
-  localStorage.setItem('loggeduserid', '');
+  localStorage.clear()
+  
+
   window.location.reload();
 }
 

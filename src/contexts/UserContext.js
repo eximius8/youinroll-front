@@ -11,7 +11,7 @@ export default function UserContextProvider(props){
     useEffect(() => {       
         if (userid){
             localStorage.setItem('loggeduserid', userid)        
-            axios.get(`https://youinroll.com/profile/${userid}?api=v1.0`)
+            axios.get(`https://youinroll.com/profile/${userid}/info?api=v1.1`)
             .then((resp) => {
                 let uData = resp.data.response;
                 let avaurl = "";

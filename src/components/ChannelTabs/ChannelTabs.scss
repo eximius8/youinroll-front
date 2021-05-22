@@ -13,8 +13,8 @@
 }
 
 .wrapped{
-    overflow-x: scroll;
-    overflow-y: hide;
-    /* flex-direction: row;
-    flex-wrap: wrap; */
+    /* overflow-x: scroll;
+    overflow-y: hide; */
+    flex-direction: row;
+    flex-wrap: wrap;
   }

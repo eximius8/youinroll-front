@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import SideBarItem, {SideBarItemSmall} from './SideBarItem/SideBarItem';
 import {Menu, Divider } from 'semantic-ui-react';
 import './SideBar.scss';
-import {SideBarHeader} from './SideBarHeader/SideBarHeader';
-import {Subscriptions} from './Subscriptions/Subscriptions';
+import { SideBarHeader } from './SideBarHeader/SideBarHeader';
+import { Subscriptions } from './Subscriptions/Subscriptions';
+import { WindowSizeContext } from "../../contexts/WindowSizeContext";
 
 
 
@@ -11,15 +12,13 @@ import {Subscriptions} from './Subscriptions/Subscriptions';
 
 export function SideBar({isOpen, setIsOpen}) {
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth <= 760)    
-  },[setIsMobile])
+  const { isMobile } = useContext(WindowSizeContext);
 
   if (isMobile){
     return (
-      null
+      <div className="mobilesb">
+  <p>dasjhsdfksdfksdfkkjsdfkjsdflsdafkhsdfkljsdfksdfkjsdfkljsdfkljhsdfkj jhdkj sdkj</p>
+      </div>
     )
   }
   

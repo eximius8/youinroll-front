@@ -30,10 +30,10 @@ $sidebar-hover-color: #ebebeb;
 .mobilesb{
   position: fixed;
   display: block;
-  top: 90%;
-  margin: -100px 0 0 0;
-  height: 50px;
+  bottom: 0px;
+  left:0px;
   width: 100%;
+  z-index: 10000;
 }
 
 /* #sideBar {
